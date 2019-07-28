@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		14AE1562E29D391081221020 /* Pods_itunesapi_cs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF9883FEA0B0E189EDC3365 /* Pods_itunesapi_cs.framework */; };
 		2CFECFEB22ED2E5F00F8592E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFECFEA22ED2E5F00F8592E /* AppDelegate.swift */; };
 		2CFECFED22ED2E5F00F8592E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFECFEC22ED2E5F00F8592E /* ViewController.swift */; };
 		2CFECFF022ED2E5F00F8592E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CFECFEE22ED2E5F00F8592E /* Main.storyboard */; };
@@ -15,7 +14,14 @@
 		2CFECFF522ED2E6100F8592E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CFECFF422ED2E6100F8592E /* Assets.xcassets */; };
 		2CFECFF822ED2E6100F8592E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CFECFF622ED2E6100F8592E /* LaunchScreen.storyboard */; };
 		2CFED00322ED2E6100F8592E /* itunesapi_csTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED00222ED2E6100F8592E /* itunesapi_csTests.swift */; };
-		7AA0BE20DFC720E2F9E808E7 /* Pods_itunesapi_csTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE294721C073EAA61E773188 /* Pods_itunesapi_csTests.framework */; };
+		2CFED01522ED2FAA00F8592E /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED01422ED2FAA00F8592E /* URL+Extensions.swift */; };
+		2CFED01722ED304800F8592E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED01622ED304800F8592E /* Constants.swift */; };
+		2CFED01922ED307E00F8592E /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED01822ED307E00F8592E /* Media.swift */; };
+		2CFED01B22ED309600F8592E /* Media+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED01A22ED309600F8592E /* Media+URL.swift */; };
+		2CFED01D22ED30C900F8592E /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED01C22ED30C900F8592E /* Album.swift */; };
+		2CFED01F22ED310400F8592E /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED01E22ED310400F8592E /* ApiClient.swift */; };
+		7E230F1A2470A933C764020B /* Pods_itunesapi_cs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 477FECDBB89B67DD359C9558 /* Pods_itunesapi_cs.framework */; };
+		A4FBF1F421177EF708DD085D /* Pods_itunesapi_csTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 621182D182E1E907CA4AB043 /* Pods_itunesapi_csTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,12 +46,18 @@
 		2CFECFFE22ED2E6100F8592E /* itunesapi_csTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = itunesapi_csTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CFED00222ED2E6100F8592E /* itunesapi_csTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itunesapi_csTests.swift; sourceTree = "<group>"; };
 		2CFED00422ED2E6100F8592E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		345E5401E95F01CF7DD62BF8 /* Pods-itunesapi_csTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itunesapi_csTests.release.xcconfig"; path = "Target Support Files/Pods-itunesapi_csTests/Pods-itunesapi_csTests.release.xcconfig"; sourceTree = "<group>"; };
-		4CF9883FEA0B0E189EDC3365 /* Pods_itunesapi_cs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_itunesapi_cs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		74C24F12654784D2A3ED1A25 /* Pods-itunesapi_csTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itunesapi_csTests.debug.xcconfig"; path = "Target Support Files/Pods-itunesapi_csTests/Pods-itunesapi_csTests.debug.xcconfig"; sourceTree = "<group>"; };
-		B9C1170D63A6C83B80EC98D6 /* Pods-itunesapi_cs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itunesapi_cs.release.xcconfig"; path = "Target Support Files/Pods-itunesapi_cs/Pods-itunesapi_cs.release.xcconfig"; sourceTree = "<group>"; };
-		BC72B116743281C91B63079C /* Pods-itunesapi_cs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itunesapi_cs.debug.xcconfig"; path = "Target Support Files/Pods-itunesapi_cs/Pods-itunesapi_cs.debug.xcconfig"; sourceTree = "<group>"; };
-		CE294721C073EAA61E773188 /* Pods_itunesapi_csTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_itunesapi_csTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CFED01422ED2FAA00F8592E /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
+		2CFED01622ED304800F8592E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2CFED01822ED307E00F8592E /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		2CFED01A22ED309600F8592E /* Media+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Media+URL.swift"; sourceTree = "<group>"; };
+		2CFED01C22ED30C900F8592E /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		2CFED01E22ED310400F8592E /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		36249240FD659A9FD438996A /* Pods-itunesapi_csTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itunesapi_csTests.debug.xcconfig"; path = "Target Support Files/Pods-itunesapi_csTests/Pods-itunesapi_csTests.debug.xcconfig"; sourceTree = "<group>"; };
+		46F90A867DA3291FB22213DB /* Pods-itunesapi_csTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itunesapi_csTests.release.xcconfig"; path = "Target Support Files/Pods-itunesapi_csTests/Pods-itunesapi_csTests.release.xcconfig"; sourceTree = "<group>"; };
+		477FECDBB89B67DD359C9558 /* Pods_itunesapi_cs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_itunesapi_cs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		621182D182E1E907CA4AB043 /* Pods_itunesapi_csTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_itunesapi_csTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFE6BDFA36279E56CC54247A /* Pods-itunesapi_cs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itunesapi_cs.debug.xcconfig"; path = "Target Support Files/Pods-itunesapi_cs/Pods-itunesapi_cs.debug.xcconfig"; sourceTree = "<group>"; };
+		F5721F93F668FE0D97071672 /* Pods-itunesapi_cs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itunesapi_cs.release.xcconfig"; path = "Target Support Files/Pods-itunesapi_cs/Pods-itunesapi_cs.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14AE1562E29D391081221020 /* Pods_itunesapi_cs.framework in Frameworks */,
+				7E230F1A2470A933C764020B /* Pods_itunesapi_cs.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,22 +73,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AA0BE20DFC720E2F9E808E7 /* Pods_itunesapi_csTests.framework in Frameworks */,
+				A4FBF1F421177EF708DD085D /* Pods_itunesapi_csTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		211FC4230911349342C1778D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				4CF9883FEA0B0E189EDC3365 /* Pods_itunesapi_cs.framework */,
-				CE294721C073EAA61E773188 /* Pods_itunesapi_csTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		2CFECFDE22ED2E5F00F8592E = {
 			isa = PBXGroup;
 			children = (
@@ -84,7 +87,7 @@
 				2CFED00122ED2E6100F8592E /* itunesapi_csTests */,
 				2CFECFE822ED2E5F00F8592E /* Products */,
 				9D63D54D6E94E8CB44E6E600 /* Pods */,
-				211FC4230911349342C1778D /* Frameworks */,
+				BD34947B8D043FE28BCCC2FF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +103,12 @@
 		2CFECFE922ED2E5F00F8592E /* itunesapi_cs */ = {
 			isa = PBXGroup;
 			children = (
+				2CFED01322ED2F8100F8592E /* Configuration */,
+				2CFED01222ED2F7B00F8592E /* Helpers */,
+				2CFED01022ED2F7200F8592E /* Models */,
+				2CFED00F22ED2F6C00F8592E /* Networking */,
+				2CFED00E22ED2F6500F8592E /* Resources */,
+				2CFED00D22ED2F4F00F8592E /* Scenes */,
 				2CFECFEA22ED2E5F00F8592E /* AppDelegate.swift */,
 				2CFECFEC22ED2E5F00F8592E /* ViewController.swift */,
 				2CFECFEE22ED2E5F00F8592E /* Main.storyboard */,
@@ -120,16 +129,72 @@
 			path = itunesapi_csTests;
 			sourceTree = "<group>";
 		};
+		2CFED00D22ED2F4F00F8592E /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		2CFED00E22ED2F6500F8592E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2CFED00F22ED2F6C00F8592E /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				2CFED01E22ED310400F8592E /* ApiClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		2CFED01022ED2F7200F8592E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2CFED01822ED307E00F8592E /* Media.swift */,
+				2CFED01C22ED30C900F8592E /* Album.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2CFED01222ED2F7B00F8592E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2CFED01422ED2FAA00F8592E /* URL+Extensions.swift */,
+				2CFED01A22ED309600F8592E /* Media+URL.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		2CFED01322ED2F8100F8592E /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				2CFED01622ED304800F8592E /* Constants.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
 		9D63D54D6E94E8CB44E6E600 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				BC72B116743281C91B63079C /* Pods-itunesapi_cs.debug.xcconfig */,
-				B9C1170D63A6C83B80EC98D6 /* Pods-itunesapi_cs.release.xcconfig */,
-				74C24F12654784D2A3ED1A25 /* Pods-itunesapi_csTests.debug.xcconfig */,
-				345E5401E95F01CF7DD62BF8 /* Pods-itunesapi_csTests.release.xcconfig */,
+				CFE6BDFA36279E56CC54247A /* Pods-itunesapi_cs.debug.xcconfig */,
+				F5721F93F668FE0D97071672 /* Pods-itunesapi_cs.release.xcconfig */,
+				36249240FD659A9FD438996A /* Pods-itunesapi_csTests.debug.xcconfig */,
+				46F90A867DA3291FB22213DB /* Pods-itunesapi_csTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		BD34947B8D043FE28BCCC2FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				477FECDBB89B67DD359C9558 /* Pods_itunesapi_cs.framework */,
+				621182D182E1E907CA4AB043 /* Pods_itunesapi_csTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,11 +204,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2CFED00722ED2E6100F8592E /* Build configuration list for PBXNativeTarget "itunesapi_cs" */;
 			buildPhases = (
-				2B085B31A4EFDD262DFCF810 /* [CP] Check Pods Manifest.lock */,
+				4D6AB5F287CB04324634BC81 /* [CP] Check Pods Manifest.lock */,
 				2CFECFE322ED2E5F00F8592E /* Sources */,
 				2CFECFE422ED2E5F00F8592E /* Frameworks */,
 				2CFECFE522ED2E5F00F8592E /* Resources */,
-				E9E56097F58AF2BFEE9D8928 /* [CP] Embed Pods Frameworks */,
+				8289827CDC5DE2BFB02E29E5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -158,7 +223,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2CFED00A22ED2E6100F8592E /* Build configuration list for PBXNativeTarget "itunesapi_csTests" */;
 			buildPhases = (
-				5022CBBAE25419DABF6950C4 /* [CP] Check Pods Manifest.lock */,
+				FC6A10B51ABD128BC8580928 /* [CP] Check Pods Manifest.lock */,
 				2CFECFFA22ED2E6100F8592E /* Sources */,
 				2CFECFFB22ED2E6100F8592E /* Frameworks */,
 				2CFECFFC22ED2E6100F8592E /* Resources */,
@@ -232,7 +297,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2B085B31A4EFDD262DFCF810 /* [CP] Check Pods Manifest.lock */ = {
+		4D6AB5F287CB04324634BC81 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -254,7 +319,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5022CBBAE25419DABF6950C4 /* [CP] Check Pods Manifest.lock */ = {
+		8289827CDC5DE2BFB02E29E5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-itunesapi_cs/Pods-itunesapi_cs-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-itunesapi_cs/Pods-itunesapi_cs-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-itunesapi_cs/Pods-itunesapi_cs-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC6A10B51ABD128BC8580928 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -276,23 +358,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E9E56097F58AF2BFEE9D8928 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-itunesapi_cs/Pods-itunesapi_cs-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-itunesapi_cs/Pods-itunesapi_cs-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-itunesapi_cs/Pods-itunesapi_cs-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -300,9 +365,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CFED01B22ED309600F8592E /* Media+URL.swift in Sources */,
+				2CFED01722ED304800F8592E /* Constants.swift in Sources */,
+				2CFED01F22ED310400F8592E /* ApiClient.swift in Sources */,
 				2CFECFED22ED2E5F00F8592E /* ViewController.swift in Sources */,
+				2CFED01922ED307E00F8592E /* Media.swift in Sources */,
+				2CFED01522ED2FAA00F8592E /* URL+Extensions.swift in Sources */,
 				2CFECFEB22ED2E5F00F8592E /* AppDelegate.swift in Sources */,
 				2CFECFF322ED2E5F00F8592E /* itunesapi_cs.xcdatamodeld in Sources */,
+				2CFED01D22ED30C900F8592E /* Album.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,7 +533,7 @@
 		};
 		2CFED00822ED2E6100F8592E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BC72B116743281C91B63079C /* Pods-itunesapi_cs.debug.xcconfig */;
+			baseConfigurationReference = CFE6BDFA36279E56CC54247A /* Pods-itunesapi_cs.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -481,7 +552,7 @@
 		};
 		2CFED00922ED2E6100F8592E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B9C1170D63A6C83B80EC98D6 /* Pods-itunesapi_cs.release.xcconfig */;
+			baseConfigurationReference = F5721F93F668FE0D97071672 /* Pods-itunesapi_cs.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -500,7 +571,7 @@
 		};
 		2CFED00B22ED2E6100F8592E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 74C24F12654784D2A3ED1A25 /* Pods-itunesapi_csTests.debug.xcconfig */;
+			baseConfigurationReference = 36249240FD659A9FD438996A /* Pods-itunesapi_csTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -522,7 +593,7 @@
 		};
 		2CFED00C22ED2E6100F8592E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 345E5401E95F01CF7DD62BF8 /* Pods-itunesapi_csTests.release.xcconfig */;
+			baseConfigurationReference = 46F90A867DA3291FB22213DB /* Pods-itunesapi_csTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

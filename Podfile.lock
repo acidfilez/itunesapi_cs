@@ -8,8 +8,8 @@ PODS:
   - OrigamiEngine/Core (1.0.14)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.0)
-  - AlamofireImage (~> 3.5)
+  - Alamofire (~> 4.7)
+  - AlamofireImage (~> 3.3)
   - ICSPullToRefresh (~> 0.6)
   - OrigamiEngine (~> 1.0)
 
@@ -26,6 +26,6 @@ SPEC CHECKSUMS:
   ICSPullToRefresh: a64f102c6558cc34270ea60e99df7c91d1f3d2c0
   OrigamiEngine: 74b097326260597f1498790795cc2cdd604c199a
 
-PODFILE CHECKSUM: 7a4f6de1b591d87922b3232cbc9c34ca94bbd2f7
+PODFILE CHECKSUM: 213312d7dedf6aea74f67f7ee2d2163a5c493b1b
 
 COCOAPODS: 1.7.2
