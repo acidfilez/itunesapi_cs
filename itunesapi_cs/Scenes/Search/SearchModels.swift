@@ -15,7 +15,10 @@ import UIKit
 enum Search {
     // MARK: Use cases
 
-    struct Request {}
+    struct Request {
+        let searchTerm: String
+    }
+
     struct Response {}
     struct ViewModel {}
 }

@@ -48,10 +48,12 @@ class SearchInteractorTests: XCTestCase {
     // MARK: Tests
     func testSearchStarted() {
         // Given
-        let searchTerm = "test album"
+        let request = Search.Request(
+            searchTerm: "test album"
+        )
 
         // When
-        sut.startSearch(searchTerm: searchTerm)
+        sut.startSearch(request: request)
 
         // Then
         XCTAssertTrue(workerSpy!.fetchMediaCalled)

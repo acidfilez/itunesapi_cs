@@ -13,7 +13,7 @@
 import UIKit
 
 protocol SearchBusinessLogic {
-    func startSearch(searchTerm: String)
+    func startSearch(request: Search.Request)
 }
 
 protocol SearchDataStore {
@@ -23,9 +23,9 @@ class SearchInteractor: SearchBusinessLogic, SearchDataStore {
     var presenter: SearchPresentationLogic?
     var worker: SearchWorker? = SearchWorker()
 
-    func startSearch(searchTerm: String) {
+    func startSearch(request: Search.Request) {
         worker?.fetchMedia(
-            for: searchTerm,
+            for: request.searchTerm,
             page: 1,
             completion: { (success, medias) in
                 self.presenter?.displayResults(medias: medias)
