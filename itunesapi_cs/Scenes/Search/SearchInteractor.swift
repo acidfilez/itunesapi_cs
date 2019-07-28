@@ -13,6 +13,7 @@
 import UIKit
 
 protocol SearchBusinessLogic {
+    func startSearch(searchTerm: String)
 }
 
 protocol SearchDataStore {
@@ -20,5 +21,9 @@ protocol SearchDataStore {
 
 class SearchInteractor: SearchBusinessLogic, SearchDataStore {
     var presenter: SearchPresentationLogic?
-    var worker: SearchWorker?
+    var worker: SearchWorker? = SearchWorker()
+
+    func startSearch(searchTerm: String) {
+
+    }
 }

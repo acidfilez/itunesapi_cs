@@ -13,4 +13,44 @@
 import UIKit
 
 class SearchWorker {
+    func fetchMedia(
+        for term: String,
+        page: Int,
+        completion: @escaping ((_ success: Bool, _ medias: [Media]) -> Void)
+    ) {
+        let queryURL = searchURL(for: term, page: page)
+
+        ApiClient.get(queryURL.absoluteString, success: { response in
+            do {
+                let searchNode = try JSONDecoder().decode(SearchNode.self, from: response)
+                completion(true, searchNode.results)
+            } catch {
+                completion(false, [])
+            }
+        }) { error in
+            completion(false, [])
+        }
+    }
+}
+
+extension SearchWorker {
+    func searchURL(for term: String, page: Int = 1) -> URL {
+        var urlComponents = URLComponents(url: Constants.API.searchURL, resolvingAgainstBaseURL: false)!
+
+        guard var queryItems = urlComponents.queryItems else {
+            let termItem = URLQueryItem(name: "term", value: term)
+            let pageItem = URLQueryItem(name: "offset", value: String((page - 1) * Constants.API.resultsPerPage))
+
+            urlComponents.queryItems = [termItem, pageItem]
+            return urlComponents.url!
+        }
+
+        let termItem = URLQueryItem(name: "term", value: term)
+        let pageItem = URLQueryItem(name: "offset", value: String((page - 1) * Constants.API.resultsPerPage))
+
+        queryItems.append(contentsOf: [termItem, pageItem])
+        urlComponents.queryItems = queryItems
+
+        return urlComponents.url!
+    }
 }

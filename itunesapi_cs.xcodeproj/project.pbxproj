@@ -33,6 +33,8 @@
 		2CFED03F22ED36C100F8592E /* SearchPresentationLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED03E22ED36C100F8592E /* SearchPresentationLogicSpy.swift */; };
 		2CFED04122ED372000F8592E /* SearchDisplayLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED04022ED372000F8592E /* SearchDisplayLogicSpy.swift */; };
 		2CFED04522ED37CC00F8592E /* SearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CFED04422ED37CC00F8592E /* SearchViewController.storyboard */; };
+		2CFED04722ED3BA800F8592E /* SearchWorkerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED04622ED3BA800F8592E /* SearchWorkerSpy.swift */; };
+		2CFED04922ED3C9700F8592E /* SearchNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED04822ED3C9700F8592E /* SearchNode.swift */; };
 		7E230F1A2470A933C764020B /* Pods_itunesapi_cs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 477FECDBB89B67DD359C9558 /* Pods_itunesapi_cs.framework */; };
 		A4FBF1F421177EF708DD085D /* Pods_itunesapi_csTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 621182D182E1E907CA4AB043 /* Pods_itunesapi_csTests.framework */; };
 /* End PBXBuildFile section */
@@ -78,6 +80,8 @@
 		2CFED03E22ED36C100F8592E /* SearchPresentationLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresentationLogicSpy.swift; sourceTree = "<group>"; };
 		2CFED04022ED372000F8592E /* SearchDisplayLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDisplayLogicSpy.swift; sourceTree = "<group>"; };
 		2CFED04422ED37CC00F8592E /* SearchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchViewController.storyboard; sourceTree = "<group>"; };
+		2CFED04622ED3BA800F8592E /* SearchWorkerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWorkerSpy.swift; sourceTree = "<group>"; };
+		2CFED04822ED3C9700F8592E /* SearchNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNode.swift; sourceTree = "<group>"; };
 		36249240FD659A9FD438996A /* Pods-itunesapi_csTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itunesapi_csTests.debug.xcconfig"; path = "Target Support Files/Pods-itunesapi_csTests/Pods-itunesapi_csTests.debug.xcconfig"; sourceTree = "<group>"; };
 		46F90A867DA3291FB22213DB /* Pods-itunesapi_csTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itunesapi_csTests.release.xcconfig"; path = "Target Support Files/Pods-itunesapi_csTests/Pods-itunesapi_csTests.release.xcconfig"; sourceTree = "<group>"; };
 		477FECDBB89B67DD359C9558 /* Pods_itunesapi_cs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_itunesapi_cs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,6 +188,7 @@
 			children = (
 				2CFED01822ED307E00F8592E /* Media.swift */,
 				2CFED01C22ED30C900F8592E /* Album.swift */,
+				2CFED04822ED3C9700F8592E /* SearchNode.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -244,6 +249,7 @@
 				2CFED03C22ED362300F8592E /* SearchBusinessLogicSpy.swift */,
 				2CFED03E22ED36C100F8592E /* SearchPresentationLogicSpy.swift */,
 				2CFED04022ED372000F8592E /* SearchDisplayLogicSpy.swift */,
+				2CFED04622ED3BA800F8592E /* SearchWorkerSpy.swift */,
 			);
 			path = Spies;
 			sourceTree = "<group>";
@@ -459,6 +465,7 @@
 				2CFED01F22ED310400F8592E /* ApiClient.swift in Sources */,
 				2CFECFED22ED2E5F00F8592E /* ViewController.swift in Sources */,
 				2CFED02C22ED34C200F8592E /* SearchModels.swift in Sources */,
+				2CFED04922ED3C9700F8592E /* SearchNode.swift in Sources */,
 				2CFED01922ED307E00F8592E /* Media.swift in Sources */,
 				2CFED02D22ED34C200F8592E /* SearchViewController.swift in Sources */,
 				2CFED02E22ED34C200F8592E /* SearchInteractor.swift in Sources */,
@@ -481,6 +488,7 @@
 				2CFED04122ED372000F8592E /* SearchDisplayLogicSpy.swift in Sources */,
 				2CFED00322ED2E6100F8592E /* itunesapi_csTests.swift in Sources */,
 				2CFED03F22ED36C100F8592E /* SearchPresentationLogicSpy.swift in Sources */,
+				2CFED04722ED3BA800F8592E /* SearchWorkerSpy.swift in Sources */,
 				2CFED03822ED35E700F8592E /* SearchInteractorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

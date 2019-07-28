@@ -10,4 +10,9 @@
 import XCTest
 
 class SearchBusinessLogicSpy: SearchBusinessLogic {
+    var startSearchCalled = false
+
+    func startSearch(searchTerm: String) {
+        startSearchCalled = true
+    }
 }

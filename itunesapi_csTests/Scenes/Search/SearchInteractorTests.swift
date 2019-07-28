@@ -18,6 +18,10 @@ class SearchInteractorTests: XCTestCase {
 
     var sut: SearchInteractor!
 
+    var presenterSpy: SearchPresentationLogicSpy? {
+        return sut.presenter as? SearchPresentationLogicSpy
+    }
+
     // MARK: Test lifecycle
 
     override func setUp() {
@@ -33,20 +37,19 @@ class SearchInteractorTests: XCTestCase {
 
     func setupSearchInteractor() {
         sut = SearchInteractor()
+        sut.presenter = SearchPresentationLogicSpy()
+        sut.worker = SearchWorkerSpy()
     }
 
     // MARK: Tests
+    func testSearchStarted() {
+        // Given
+        let searchTerm = "test album"
 
-//    func testDoSomething() {
-//        // Given
-//        let spy = SearchPresentationLogicSpy()
-//        sut.presenter = spy
-//        let request = Search.Something.Request()
-//
-//        // When
-//        sut.doSomething(request: request)
-//
-//        // Then
-//        XCTAssertTrue(spy.presentSomethingCalled, "doSomething(request:) should ask the presenter to format the result")
-//    }
+        // When
+        sut.startSearch(searchTerm: searchTerm)
+
+        // Then
+        XCTAssertTrue(presenterSpy!.displayResultsCalled)
+    }
 }

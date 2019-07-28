@@ -45,5 +45,4 @@ class SearchViewControllerTests: XCTestCase {
     }
 
     // MARK: Tests
-
 }

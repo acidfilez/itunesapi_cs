@@ -13,8 +13,13 @@
 import UIKit
 
 protocol SearchPresentationLogic {
+    func displayResults(medias: [Media])
 }
 
 class SearchPresenter: SearchPresentationLogic {
     weak var viewController: SearchDisplayLogic?
+
+    func displayResults(medias: [Media]) {
+        
+    }
 }

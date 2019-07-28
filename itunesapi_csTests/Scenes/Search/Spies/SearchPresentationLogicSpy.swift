@@ -10,4 +10,9 @@
 import XCTest
 
 class SearchPresentationLogicSpy: SearchPresentationLogic {
+    var displayResultsCalled = false
+
+    func displayResults(medias: [Media]) {
+        displayResultsCalled = true
+    }
 }
