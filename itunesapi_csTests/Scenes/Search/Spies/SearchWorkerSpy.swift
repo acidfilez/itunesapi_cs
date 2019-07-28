@@ -14,6 +14,7 @@ class SearchWorkerSpy: SearchWorker {
 
     override func fetchMedia(for term: String, page: Int, completion: @escaping ((Bool, [Media]) -> Void)) {
         fetchMediaCalled = true
+        completion(true, [])
     }
 }
 

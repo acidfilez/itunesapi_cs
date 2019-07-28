@@ -22,6 +22,10 @@ class SearchInteractorTests: XCTestCase {
         return sut.presenter as? SearchPresentationLogicSpy
     }
 
+    var workerSpy: SearchWorkerSpy? {
+        return sut.worker as? SearchWorkerSpy
+    }
+
     // MARK: Test lifecycle
 
     override func setUp() {
@@ -50,6 +54,7 @@ class SearchInteractorTests: XCTestCase {
         sut.startSearch(searchTerm: searchTerm)
 
         // Then
+        XCTAssertTrue(workerSpy!.fetchMediaCalled)
         XCTAssertTrue(presenterSpy!.displayResultsCalled)
     }
 }

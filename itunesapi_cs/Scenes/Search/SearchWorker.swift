@@ -25,10 +25,10 @@ class SearchWorker {
                 let searchNode = try JSONDecoder().decode(SearchNode.self, from: response)
                 completion(true, searchNode.results)
             } catch {
-                completion(false, [])
+                completion(false, [Media]())
             }
         }) { error in
-            completion(false, [])
+            completion(false, [Media]())
         }
     }
 }

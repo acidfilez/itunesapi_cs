@@ -24,6 +24,12 @@ class SearchInteractor: SearchBusinessLogic, SearchDataStore {
     var worker: SearchWorker? = SearchWorker()
 
     func startSearch(searchTerm: String) {
-
+        worker?.fetchMedia(
+            for: searchTerm,
+            page: 1,
+            completion: { (success, medias) in
+                self.presenter?.displayResults(medias: medias)
+            }
+        )
     }
 }
