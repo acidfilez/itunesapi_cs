@@ -1,0 +1,6 @@
+framework module Pods_itunesapi_cs {
+  umbrella header "Pods-itunesapi_cs-umbrella.h"
+
+  export *
+  module * { export * }
+}

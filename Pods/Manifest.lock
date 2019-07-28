@@ -1,0 +1,31 @@
+PODS:
+  - Alamofire (4.8.2)
+  - AlamofireImage (3.5.2):
+    - Alamofire (~> 4.8)
+  - ICSPullToRefresh (0.6)
+  - OrigamiEngine (1.0.14):
+    - OrigamiEngine/Core (= 1.0.14)
+  - OrigamiEngine/Core (1.0.14)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.0)
+  - AlamofireImage (~> 3.5)
+  - ICSPullToRefresh (~> 0.6)
+  - OrigamiEngine (~> 1.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireImage
+    - ICSPullToRefresh
+    - OrigamiEngine
+
+SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
+  ICSPullToRefresh: a64f102c6558cc34270ea60e99df7c91d1f3d2c0
+  OrigamiEngine: 74b097326260597f1498790795cc2cdd604c199a
+
+PODFILE CHECKSUM: 7a4f6de1b591d87922b3232cbc9c34ca94bbd2f7
+
+COCOAPODS: 1.7.2
