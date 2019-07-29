@@ -46,6 +46,8 @@
 		2CFED06A22EF8CE400F8592E /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED06422EF8CE400F8592E /* DetailsViewController.swift */; };
 		2CFED06B22EF8CE400F8592E /* DetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED06522EF8CE400F8592E /* DetailsInteractor.swift */; };
 		2CFED06E22EF8D7D00F8592E /* DetailsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CFED06D22EF8D7D00F8592E /* DetailsViewController.storyboard */; };
+		2CFED07022EF8DF600F8592E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CFED06F22EF8DF600F8592E /* Main.storyboard */; };
+		2CFED07222EF8E5F00F8592E /* AppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED07122EF8E5F00F8592E /* AppNavigationController.swift */; };
 		7E230F1A2470A933C764020B /* Pods_itunesapi_cs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 477FECDBB89B67DD359C9558 /* Pods_itunesapi_cs.framework */; };
 		A4FBF1F421177EF708DD085D /* Pods_itunesapi_csTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 621182D182E1E907CA4AB043 /* Pods_itunesapi_csTests.framework */; };
 /* End PBXBuildFile section */
@@ -104,6 +106,8 @@
 		2CFED06422EF8CE400F8592E /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		2CFED06522EF8CE400F8592E /* DetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsInteractor.swift; sourceTree = "<group>"; };
 		2CFED06D22EF8D7D00F8592E /* DetailsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsViewController.storyboard; sourceTree = "<group>"; };
+		2CFED06F22EF8DF600F8592E /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		2CFED07122EF8E5F00F8592E /* AppNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
 		36249240FD659A9FD438996A /* Pods-itunesapi_csTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itunesapi_csTests.debug.xcconfig"; path = "Target Support Files/Pods-itunesapi_csTests/Pods-itunesapi_csTests.debug.xcconfig"; sourceTree = "<group>"; };
 		46F90A867DA3291FB22213DB /* Pods-itunesapi_csTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itunesapi_csTests.release.xcconfig"; path = "Target Support Files/Pods-itunesapi_csTests/Pods-itunesapi_csTests.release.xcconfig"; sourceTree = "<group>"; };
 		477FECDBB89B67DD359C9558 /* Pods_itunesapi_cs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_itunesapi_cs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,8 +166,10 @@
 				2CFED00E22ED2F6500F8592E /* Resources */,
 				2CFED00D22ED2F4F00F8592E /* Scenes */,
 				2CFECFEA22ED2E5F00F8592E /* AppDelegate.swift */,
+				2CFED07122EF8E5F00F8592E /* AppNavigationController.swift */,
 				2CFECFEC22ED2E5F00F8592E /* ViewController.swift */,
 				2CFECFF422ED2E6100F8592E /* Assets.xcassets */,
+				2CFED06F22EF8DF600F8592E /* Main.storyboard */,
 				2CFECFF622ED2E6100F8592E /* LaunchScreen.storyboard */,
 				2CFECFF922ED2E6100F8592E /* Info.plist */,
 			);
@@ -448,6 +454,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CFED06E22EF8D7D00F8592E /* DetailsViewController.storyboard in Resources */,
+				2CFED07022EF8DF600F8592E /* Main.storyboard in Resources */,
 				2CFECFF822ED2E6100F8592E /* LaunchScreen.storyboard in Resources */,
 				2CFECFF522ED2E6100F8592E /* Assets.xcassets in Resources */,
 				2CFED04522ED37CC00F8592E /* SearchViewController.storyboard in Resources */,
@@ -541,6 +548,7 @@
 				2CFECFED22ED2E5F00F8592E /* ViewController.swift in Sources */,
 				2CFED02C22ED34C200F8592E /* SearchModels.swift in Sources */,
 				2CFED04922ED3C9700F8592E /* SearchNode.swift in Sources */,
+				2CFED07222EF8E5F00F8592E /* AppNavigationController.swift in Sources */,
 				2CFED05522EF7DC400F8592E /* itunesapi_cs.xcdatamodeld in Sources */,
 				2CFED06622EF8CE400F8592E /* DetailsPresenter.swift in Sources */,
 				2CFED05922EF830B00F8592E /* SearchTableViewCell.swift in Sources */,
