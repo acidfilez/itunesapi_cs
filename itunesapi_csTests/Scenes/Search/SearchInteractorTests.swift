@@ -88,6 +88,7 @@ class SearchInteractorTests: XCTestCase {
             )
         ]
 
+        let initialRequest = Search.Request(searchTerm: "test album", page: 1)
         let request = Search.Request(searchTerm: "test album", page: 2)
         let workerSpy = SearchWorkerSpy()
         let presenterSpy = SearchPresentationLogicSpy()
@@ -97,6 +98,7 @@ class SearchInteractorTests: XCTestCase {
         sut.presenter = presenterSpy
 
         // When
+        sut.startSearch(request: initialRequest)
         sut.nextPage(request: request)
 
         // Then
