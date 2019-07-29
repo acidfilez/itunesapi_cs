@@ -70,7 +70,6 @@ class SearchInteractorTests: XCTestCase {
         sut.startSearch(request: request, localResultsOnly: true)
 
         // Then
-        XCTAssertTrue(workerSpy.deleteLocalResultsCalled)
         XCTAssertTrue(workerSpy.fetchLocalResultsCalled)
     }
 }

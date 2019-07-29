@@ -13,6 +13,10 @@ class SearchBusinessLogicSpy: SearchBusinessLogic {
     var startSearchCalled = false
 
     func startSearch(request: Search.Request) {
+        startSearch(request: request, localResultsOnly: false)
+    }
+
+    func startSearch(request: Search.Request, localResultsOnly: Bool) {
         startSearchCalled = true
     }
 }
