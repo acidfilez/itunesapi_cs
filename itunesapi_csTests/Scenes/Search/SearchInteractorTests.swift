@@ -160,7 +160,6 @@ class SearchInteractorTests: XCTestCase {
         sut.startSearch(request: request)
 
         // Then
-        XCTAssertTrue(coreDataWorkerSpy.deleteLocalResultsCalled)
         XCTAssertTrue(coreDataWorkerSpy.saveLocalResultsCalled)
     }
 }

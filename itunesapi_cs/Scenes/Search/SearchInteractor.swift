@@ -58,8 +58,10 @@ class SearchInteractor: SearchBusinessLogic, SearchDataStore {
                 page: request.page,
                 completion: { (success, medias) in
                     if success {
-                        let response = Search.Response(medias: medias)
                         self.currentMedias = medias
+                        let response = Search.Response(medias: medias)
+
+                        self.coreDataWorker?.saveLocalResults(for: request.searchTerm, medias: response.medias)
                         self.presenter?.displayResults(response: response)
                     } else {
                         self.startSearch(request: request, localResultsOnly: true)
@@ -85,8 +87,9 @@ class SearchInteractor: SearchBusinessLogic, SearchDataStore {
             completion: { (success, medias) in
                 let filtered = medias.filter { $0.collectionId != nil && $0.kind != nil && $0.kind! == "song" }
                 self.currentMedias.append(contentsOf: filtered)
-
                 let response = Search.Response(medias: self.currentMedias)
+
+                self.coreDataWorker?.saveLocalResults(for: request.searchTerm, medias: response.medias)
                 self.presenter?.displayResults(response: response)
             }
         )

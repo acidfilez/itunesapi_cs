@@ -12,6 +12,10 @@ import Foundation
 class SearchCoreDataWorkerSpy: SearchCoreDataWorker {
     var saveLocalResultsCalled = false
 
+    override func saveLocalResults(for term: String, medias: [Media]) {
+        saveLocalResults(for: term, json: "[]")
+    }
+
     override func saveLocalResults(for query: String, json: String) {
         saveLocalResultsCalled = true
     }
@@ -21,11 +25,5 @@ class SearchCoreDataWorkerSpy: SearchCoreDataWorker {
     override func fetchLocalResults(for query: String) -> [Media] {
         fetchLocalResultsCalled = true
         return []
-    }
-
-    var deleteLocalResultsCalled = false
-
-    override func deleteLocalResults(for query: String) {
-        deleteLocalResultsCalled = true
     }
 }

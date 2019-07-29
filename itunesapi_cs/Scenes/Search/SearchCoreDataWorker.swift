@@ -10,6 +10,20 @@ import CoreData
 import UIKit
 
 class SearchCoreDataWorker {
+    func saveLocalResults(for term: String, medias: [Media]) {
+        do {
+            let jsonData = try JSONEncoder().encode(medias)
+            
+            guard let jsonString = String(data: jsonData, encoding: .utf8) else {
+                fatalError("[COREDATA] ERROR: Invalid JSON for the medias collection.")
+            }
+
+            saveLocalResults(for: term, json: jsonString)
+        } catch {
+            print("[COREDATA] ERROR: \(error.localizedDescription)")
+        }
+    }
+
     func saveLocalResults(for query: String, json: String) {
         deleteLocalResults(for: query) // Eliminar resultados anteriores (mantenemos un solo registro con el string JSON para cada query)
 
@@ -55,7 +69,7 @@ class SearchCoreDataWorker {
         return results
     }
 
-    func deleteLocalResults(for query: String) {
+    private func deleteLocalResults(for query: String) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
 
