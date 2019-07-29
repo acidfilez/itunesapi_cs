@@ -72,6 +72,6 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
     }
 
     func displayNoResults() {
-        
+        medias = []
     }
 }
