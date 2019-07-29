@@ -37,16 +37,28 @@ class DetailsInteractorTests: XCTestCase {
 
     // MARK: Tests
 
-//    func testDoSomething() {
-//        // Given
-//        let spy = DetailsPresentationLogicSpy()
-//        sut.presenter = spy
-//        let request = Details.Something.Request()
-//
-//        // When
-//        sut.doSomething(request: request)
-//
-//        // Then
-//        XCTAssertTrue(spy.presentSomethingCalled, "doSomething(request:) should ask the presenter to format the result")
-//    }
+    func testFetchAlbumDetails() {
+        // Given
+        let media = Media(
+            wrapperType: "wrapper type",
+            artistName: "artist",
+            collectionId: 1,
+            collectionName: "collection name",
+            kind: "kind",
+            trackId: 1,
+            trackName: "track 1",
+            trackNumber: 1,
+            artwork: "artwork",
+            previewUrl: nil
+        )
+        let request = Details.Request(media: media)
+        let presenterSpy = DetailsPresentationLogicSpy()
+        sut.presenter = presenterSpy
+
+        // When
+        sut.fetchAlbumDetails(request: request)
+
+        // Then
+        XCTAssertTrue(presenterSpy.presentAlbumDetailsCalled)
+    }
 }
