@@ -32,6 +32,7 @@ class SearchPresenter: SearchPresentationLogic {
     }
 
     func displayMediaDetails(response: Search.DetailsResponse) {
-        
+        let viewModel = Search.DetailsViewModel(media: response.media)
+        viewController?.routeToMediaDetails(viewModel: viewModel)
     }
 }

@@ -71,7 +71,7 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
-//        tableView.delegate = self
+        tableView.delegate = self
         interactor?.startSearch(request: Search.Request(searchTerm: "epica", page: 1), localResultsOnly: false)
     }
 
@@ -104,7 +104,7 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
     }
 
     func routeToMediaDetails(viewModel: Search.DetailsViewModel) {
-        
+        router?.routeToDetails()
     }
 }
 
