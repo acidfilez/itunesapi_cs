@@ -55,11 +55,13 @@ class SearchInteractor: SearchBusinessLogic, SearchDataStore {
             presenter?.displayResults(response: response)
         } else {
             presenter?.displayLoadingIndicator()
-            
+
             worker?.fetchMedia(
                 for: request.searchTerm,
                 page: request.page,
                 completion: { (success, medias) in
+                    self.presenter?.dismissLoadingIndicator()
+                    
                     if success {
                         self.currentMedias = medias
                         let response = Search.Response(medias: medias)

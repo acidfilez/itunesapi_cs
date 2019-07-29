@@ -89,4 +89,54 @@ class SearchPresenterTests: XCTestCase {
         // Then
         XCTAssertTrue(viewControllerSpy.displayNoResultsCalled)
     }
+
+    func testDisplayMediaDetails() {
+        // Given
+        let viewControllerSpy = SearchDisplayLogicSpy()
+        sut.viewController = viewControllerSpy
+
+        let media = Media(
+            wrapperType: "wrapper type",
+            artistName: "artist",
+            collectionId: 1,
+            collectionName: "collection name",
+            kind: "kind",
+            trackId: 1,
+            trackName: "track 1",
+            trackNumber: 1,
+            artwork: "artwork",
+            previewUrl: nil
+        )
+        let response = Search.DetailsResponse(media: media)
+
+        // When
+        sut.displayMediaDetails(response: response)
+
+        // Then
+        XCTAssertTrue(viewControllerSpy.routeToMediaDetailsCalled)
+    }
+
+    func testDisplayLoadingIndicator() {
+        // Given
+        let viewControllerSpy = SearchDisplayLogicSpy()
+        sut.viewController = viewControllerSpy
+
+        // When
+        sut.displayLoadingIndicator()
+
+        // Then
+        XCTAssertTrue(viewControllerSpy.showLoadingIndicatorCalled)
+    }
+
+    func testDismissLoadingIndicator() {
+        // Given
+        let viewControllerSpy = SearchDisplayLogicSpy()
+        sut.viewController = viewControllerSpy
+
+        // When
+        sut.dismissLoadingIndicator()
+
+        // Then
+        XCTAssertTrue(viewControllerSpy.hideLoadingIndicatorCalled)
+    }
 }

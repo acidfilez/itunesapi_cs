@@ -27,4 +27,10 @@ class SearchPresentationLogicSpy: SearchPresentationLogic {
     func displayLoadingIndicator() {
         displayLoadingIndicatorCalled = true
     }
+
+    var dismissLoadingIndicatorCalled = false
+    
+    func dismissLoadingIndicator() {
+        dismissLoadingIndicatorCalled = true
+    }
 }

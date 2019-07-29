@@ -17,6 +17,9 @@ protocol SearchDisplayLogic: class {
     func displayNoResults()
     func hideNoResults()
 
+    func showLoadingIndicator()
+    func hideLoadingIndicator()
+
     func routeToMediaDetails(viewModel: Search.DetailsViewModel)
 }
 
@@ -30,6 +33,7 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
     private weak var noResultsLabel: UILabel?
 
     let searchController = UISearchController(searchResultsController: nil)
+    weak var activityIndicator: UIActivityIndicatorView?
 
     // MARK: Object lifecycle
 
@@ -108,6 +112,37 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
 
     func hideNoResults() {
         noResultsLabel?.removeFromSuperview()
+    }
+
+    func showLoadingIndicator() {
+        let indicator = UIActivityIndicatorView()
+        indicator.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        indicator.hidesWhenStopped = true
+        indicator.clipsToBounds = true
+        indicator.layer.cornerRadius = 8.0
+
+        searchController.searchBar.isUserInteractionEnabled = false
+        view.isUserInteractionEnabled = false
+
+        view.addSubview(indicator)
+        view.bringSubviewToFront(indicator)
+
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        indicator.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        indicator.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        indicator.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        indicator.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+
+        activityIndicator = indicator
+        activityIndicator?.startAnimating()
+    }
+
+    func hideLoadingIndicator() {
+        activityIndicator?.stopAnimating()
+        activityIndicator?.removeFromSuperview()
+
+        searchController.searchBar.isUserInteractionEnabled = true
+        view.isUserInteractionEnabled = true
     }
 
     func routeToMediaDetails(viewModel: Search.DetailsViewModel) {

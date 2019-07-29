@@ -33,4 +33,17 @@ class SearchDisplayLogicSpy: SearchDisplayLogic {
     func hideNoResults() {
         hideNoResultsCalled = true
     }
+
+    var showLoadingIndicatorCalled = false
+
+    func showLoadingIndicator() {
+        showLoadingIndicatorCalled = true
+    }
+
+    var hideLoadingIndicatorCalled = false
+
+    func hideLoadingIndicator() {
+        hideLoadingIndicatorCalled = true
+    }
+
 }

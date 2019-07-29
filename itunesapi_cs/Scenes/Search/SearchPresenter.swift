@@ -16,6 +16,7 @@ protocol SearchPresentationLogic {
     func displayResults(response: Search.Response)
     func displayMediaDetails(response: Search.DetailsResponse)
     func displayLoadingIndicator()
+    func dismissLoadingIndicator()
 }
 
 class SearchPresenter: SearchPresentationLogic {
@@ -38,6 +39,10 @@ class SearchPresenter: SearchPresentationLogic {
     }
 
     func displayLoadingIndicator() {
+        viewController?.showLoadingIndicator()
+    }
 
+    func dismissLoadingIndicator() {
+        viewController?.hideLoadingIndicator()
     }
 }

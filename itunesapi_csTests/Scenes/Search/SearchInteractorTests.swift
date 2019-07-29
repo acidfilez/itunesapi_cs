@@ -51,6 +51,7 @@ class SearchInteractorTests: XCTestCase {
         XCTAssertTrue(presenterSpy.displayLoadingIndicatorCalled)
         XCTAssertTrue(workerSpy.fetchMediaCalled)
         XCTAssertTrue(presenterSpy.displayResultsCalled)
+        XCTAssertTrue(presenterSpy.dismissLoadingIndicatorCalled)
     }
 
     func testSearchCoreData() {
