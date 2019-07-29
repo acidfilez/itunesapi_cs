@@ -62,7 +62,14 @@ class DetailsViewController: UIViewController, DetailsDisplayLogic {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        doSomething()
+
+        if
+            let dataStore = interactor as? DetailsDataStore,
+            let media = dataStore.media
+        {
+            let request = Details.Request(media: media)
+            interactor?.fetchAlbumDetails(request: request)
+        }
     }
 
     // MARK: Do something

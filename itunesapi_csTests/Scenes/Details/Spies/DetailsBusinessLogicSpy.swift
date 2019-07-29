@@ -10,9 +10,11 @@
 import XCTest
 
 class DetailsBusinessLogicSpy: DetailsBusinessLogic {
-//    var doSomethingCalled = false
-//
-//    func doSomething(request: Details.Something.Request) {
-//        doSomethingCalled = true
-//    }
+
+    var fetchAlbumDetailsCalled = false
+
+    func fetchAlbumDetails(request: Details.Request) {
+        fetchAlbumDetailsCalled = true
+    }
+    
 }

@@ -53,7 +53,9 @@ class DetailsInteractorTests: XCTestCase {
         )
         let request = Details.Request(media: media)
         let presenterSpy = DetailsPresentationLogicSpy()
+        let workerSpy = DetailsWorkerSpy()
         sut.presenter = presenterSpy
+        sut.worker = workerSpy
 
         // When
         sut.fetchAlbumDetails(request: request)

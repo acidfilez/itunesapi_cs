@@ -24,6 +24,7 @@ protocol SearchDataStore {
     var lastTerm: String { get set }
     var currentPage: Int { get set }
     var currentMedias: [Media] { get set }
+    var selectedMedia: Media? { get set }
 }
 
 class SearchInteractor: SearchBusinessLogic, SearchDataStore {
@@ -35,6 +36,7 @@ class SearchInteractor: SearchBusinessLogic, SearchDataStore {
     var lastTerm: String = ""
     var currentPage: Int = 1
     var currentMedias: [Media] = []
+    var selectedMedia: Media?
 
     // MARK: - Business logic
 
@@ -101,6 +103,8 @@ class SearchInteractor: SearchBusinessLogic, SearchDataStore {
     }
 
     func didSelectMedia(request: Search.DetailsRequest) {
+        selectedMedia = request.media
+
         let response = Search.DetailsResponse(media: request.media)
         presenter?.displayMediaDetails(response: response)
     }

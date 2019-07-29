@@ -13,25 +13,32 @@
 import UIKit
 
 protocol DetailsBusinessLogic {
-//    func doSomething(request: Details.Something.Request)
+    func fetchAlbumDetails(request: Details.Request)
 }
 
 protocol DetailsDataStore {
-    //var name: String { get set }
+    var media: Media? { get set }
+    var album: Album? { get set }
 }
 
 class DetailsInteractor: DetailsBusinessLogic, DetailsDataStore {
     var presenter: DetailsPresentationLogic?
-    var worker: DetailsWorker?
-    //var name: String = ""
+    var worker: DetailsWorker? = DetailsWorker()
+    var media: Media?
+    var album: Album?
 
     // MARK: Do something
 
-//    func doSomething(request: Details.Something.Request) {
-//        worker = DetailsWorker()
-//        worker?.doSomeWork()
-//
-//        let response = Details.Something.Response()
-//        presenter?.presentSomething(response: response)
-//    }
+    func fetchAlbumDetails(request: Details.Request) {
+        worker?.fetchAlbumDetails(media: request.media, completion: { success, album in
+            self.album = album
+
+            if success {
+                let response = Details.Response(album: album)
+                self.presenter?.presentAlbumDetails(response: response)
+            } else {
+                // TODO: Show "no details available"
+            }
+        })
+    }
 }

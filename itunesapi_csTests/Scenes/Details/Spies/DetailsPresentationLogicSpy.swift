@@ -10,9 +10,10 @@
 import XCTest
 
 class DetailsPresentationLogicSpy: DetailsPresentationLogic {
-//    var presentSomethingCalled = false
-//
-//    func presentSomething(response: Details.Something.Response) {
-//        presentSomethingCalled = true
-//    }
+
+    var presentAlbumDetailsCalled = false
+
+    func presentAlbumDetails(response: Details.Response) {
+        presentAlbumDetailsCalled = true
+    }
 }

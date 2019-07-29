@@ -43,6 +43,6 @@ class SearchRouter: NSObject, SearchRoutingLogic, SearchDataPassing {
     // MARK: Passing data
 
     func passDataToDetails(source: SearchDataStore, destination: inout DetailsDataStore) {
-        // destination.something = source.originSomething
+        destination.media = source.selectedMedia
     }
 }

@@ -15,12 +15,15 @@ import UIKit
 enum Details {
     // MARK: Use cases
 
-//    enum Something {
-//        struct Request {
-//        }
-//        struct Response {
-//        }
-//        struct ViewModel {
-//        }
-//    }
+    struct Request {
+        let media: Media
+    }
+
+    struct Response {
+        let album: Album
+    }
+
+    struct ViewModel {
+        
+    }
 }
