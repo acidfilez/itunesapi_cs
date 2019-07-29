@@ -82,4 +82,29 @@ class SearchViewControllerTests: XCTestCase {
         // Then
         XCTAssertNotEqual(sut.medias.count, 0)
     }
+
+    func testDisplayEmptyResults() {
+        // Given
+        let medias = [
+            Media(
+                wrapperType: "wrapper type",
+                artistName: "artist",
+                collectionId: 1,
+                collectionName: "collection name",
+                kind: "kind",
+                trackId: 1,
+                trackName: "track 1",
+                trackNumber: 1,
+                artwork: "artwork",
+                previewUrl: nil
+            )
+        ]
+        sut.medias = medias
+
+        // When
+        sut.displayNoResults()
+
+        // Then
+        XCTAssertEqual(sut.medias.count, 0)
+    }
 }
