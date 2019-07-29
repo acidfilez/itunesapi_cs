@@ -75,16 +75,16 @@ class SearchPresenterTests: XCTestCase {
         XCTAssertTrue(viewControllerSpy.displayResultsCalled)
     }
 
-//    func testPresentSomething() {
-//        // Given
-//        let spy = SearchDisplayLogicSpy()
-//        sut.viewController = spy
-//        let response = Search.Something.Response()
-//
-//        // When
-//        sut.presentSomething(response: response)
-//
-//        // Then
-//        XCTAssertTrue(spy.displaySomethingCalled, "presentSomething(response:) should ask the view controller to display the result")
-//    }
+    func testDisplayResultsEmpty() {
+        // Given
+        let viewControllerSpy = SearchDisplayLogicSpy()
+        sut.viewController = viewControllerSpy
+        let medias: [Media] = []
+
+        // When
+        sut.displayResults(medias: medias)
+
+        // Then
+        XCTAssertTrue(viewControllerSpy.displayNoResultsCalled)
+    }
 }

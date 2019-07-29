@@ -15,4 +15,10 @@ class SearchDisplayLogicSpy: SearchDisplayLogic {
     func displayResults(viewModel: Search.ViewModel) {
         displayResultsCalled = true
     }
+
+    var displayNoResultsCalled = false
+
+    func displayNoResults() {
+        displayNoResultsCalled = true
+    }
 }
