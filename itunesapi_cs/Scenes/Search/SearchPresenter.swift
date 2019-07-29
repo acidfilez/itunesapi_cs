@@ -20,6 +20,7 @@ class SearchPresenter: SearchPresentationLogic {
     weak var viewController: SearchDisplayLogic?
 
     func displayResults(medias: [Media]) {
-        
+        let viewModel = Search.ViewModel(medias: medias)
+        viewController?.displayResults(viewModel: viewModel)
     }
 }
