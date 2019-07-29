@@ -73,10 +73,26 @@ class SearchInteractorTests: XCTestCase {
 
     func testNextPage() {
         // Given
+        let currentMedias = [
+            Media(
+                wrapperType: "wrapper type",
+                artistName: "artist",
+                collectionId: 1,
+                collectionName: "collection name",
+                kind: "kind",
+                trackId: 1,
+                trackName: "track 1",
+                trackNumber: 1,
+                artwork: "artwork",
+                previewUrl: nil
+            )
+        ]
+
         let request = Search.Request(searchTerm: "test album", page: 2)
         let workerSpy = SearchWorkerSpy()
         let presenterSpy = SearchPresentationLogicSpy()
 
+        sut.currentMedias = currentMedias
         sut.worker = workerSpy
         sut.presenter = presenterSpy
 
@@ -84,6 +100,7 @@ class SearchInteractorTests: XCTestCase {
         sut.nextPage(request: request)
 
         // Then
+        XCTAssertNotEqual(currentMedias.count, sut.currentMedias.count)
         XCTAssertTrue(workerSpy.fetchMediaCalled)
         XCTAssertTrue(presenterSpy.displayResultsCalled)
     }

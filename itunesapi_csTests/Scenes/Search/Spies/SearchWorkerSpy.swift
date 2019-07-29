@@ -14,7 +14,32 @@ class SearchWorkerSpy: SearchWorker {
 
     override func fetchMedia(for term: String, page: Int, completion: @escaping ((Bool, [Media]) -> Void)) {
         fetchMediaCalled = true
-        completion(true, [])
+        completion(true, [
+            Media(
+                wrapperType: "wrapper type",
+                artistName: "artist",
+                collectionId: 1,
+                collectionName: "collection name",
+                kind: "kind",
+                trackId: 1,
+                trackName: "track 1",
+                trackNumber: 1,
+                artwork: "artwork",
+                previewUrl: nil
+            ),
+            Media(
+                wrapperType: "wrapper type",
+                artistName: "artist",
+                collectionId: 1,
+                collectionName: "collection name",
+                kind: "kind",
+                trackId: 1,
+                trackName: "track 1",
+                trackNumber: 1,
+                artwork: "artwork",
+                previewUrl: nil
+            )
+        ])
     }
 }
 
