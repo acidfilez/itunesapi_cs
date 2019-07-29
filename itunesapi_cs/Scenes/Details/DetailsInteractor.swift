@@ -37,7 +37,7 @@ class DetailsInteractor: DetailsBusinessLogic, DetailsDataStore {
                 let response = Details.Response(album: album)
                 self.presenter?.presentAlbumDetails(response: response)
             } else {
-                // TODO: Show "no details available"
+                self.presenter?.presentAlbumDetailsErrorMessage()
             }
         })
     }
