@@ -108,4 +108,65 @@ class SearchViewControllerTests: XCTestCase {
         // Then
         XCTAssertEqual(sut.medias.count, 0)
     }
+
+    func testSearchBarSearchButtonClicked() {
+        // Given
+        let searchBar = UISearchBar()
+        searchBar.text = "test string"
+
+        let interactorSpy = SearchBusinessLogicSpy()
+        sut.interactor = interactorSpy
+
+        // When
+        sut.loadView()
+        sut.searchBarSearchButtonClicked(searchBar)
+
+        // Then
+        XCTAssertTrue(interactorSpy.startSearchCalled)
+    }
+
+    func testSearchBarCancelButtonClicked() {
+        // Given
+        let medias = [
+            Media(
+                wrapperType: "wrapper type",
+                artistName: "artist",
+                collectionId: 1,
+                collectionName: "collection name",
+                kind: "kind",
+                trackId: 1,
+                trackName: "track 1",
+                trackNumber: 1,
+                artwork: "artwork",
+                previewUrl: nil
+            ),
+            Media(
+                wrapperType: "wrapper type",
+                artistName: "artist",
+                collectionId: 1,
+                collectionName: "collection name",
+                kind: "kind",
+                trackId: 2,
+                trackName: "track 2",
+                trackNumber: 2,
+                artwork: "artwork",
+                previewUrl: nil
+            )
+        ]
+
+        let searchBar = UISearchBar()
+        searchBar.text = "test string"
+
+        let interactorSpy = SearchBusinessLogicSpy()
+        sut.interactor = interactorSpy
+        sut.medias = medias
+
+        // When
+        sut.loadView()
+        sut.searchBarCancelButtonClicked(searchBar)
+
+        // Then
+        XCTAssertEqual(searchBar.text, "test string")
+        XCTAssertEqual(sut.medias.count, 0)
+    }
 }

@@ -11,9 +11,12 @@ import XCTest
 
 class SearchWorkerSpy: SearchWorker {
     var fetchMediaCalled = false
+    var fetchMediaQuery = ""
 
     override func fetchMedia(for term: String, page: Int, completion: @escaping ((Bool, [Media]) -> Void)) {
         fetchMediaCalled = true
+        fetchMediaQuery = term
+
         completion(true, [
             Media(
                 wrapperType: "wrapper type",

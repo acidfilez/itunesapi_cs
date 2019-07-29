@@ -27,4 +27,10 @@ class SearchDisplayLogicSpy: SearchDisplayLogic {
     func routeToMediaDetails(viewModel: Search.DetailsViewModel) {
         routeToMediaDetailsCalled = true
     }
+
+    var hideNoResultsCalled = false
+
+    func hideNoResults() {
+        hideNoResultsCalled = true
+    }
 }

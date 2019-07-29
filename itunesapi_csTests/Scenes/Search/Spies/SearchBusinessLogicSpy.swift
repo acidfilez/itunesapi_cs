@@ -11,8 +11,10 @@ import XCTest
 
 class SearchBusinessLogicSpy: SearchBusinessLogic {
     var startSearchCalled = false
+    var startSearchQuery = ""
 
     func startSearch(request: Search.Request) {
+        startSearchQuery = request.searchTerm
         startSearch(request: request, localResultsOnly: false)
     }
 

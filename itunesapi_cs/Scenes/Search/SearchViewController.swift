@@ -15,6 +15,7 @@ import UIKit
 protocol SearchDisplayLogic: class {
     func displayResults(viewModel: Search.ViewModel)
     func displayNoResults()
+    func hideNoResults()
 
     func routeToMediaDetails(viewModel: Search.DetailsViewModel)
 }
@@ -27,6 +28,8 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
 
     @IBOutlet weak var tableView: UITableView!
     private weak var noResultsLabel: UILabel?
+
+    let searchController = UISearchController(searchResultsController: nil)
 
     // MARK: Object lifecycle
 
@@ -72,7 +75,8 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        interactor?.startSearch(request: Search.Request(searchTerm: "epica", page: 1), localResultsOnly: false)
+
+        setupSearchController()
     }
 
     func displayResults(viewModel: Search.ViewModel) {
@@ -88,8 +92,7 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
 
     func displayNoResults() {
         medias = []
-
-        noResultsLabel?.removeFromSuperview()
+        hideNoResults()
 
         let message = UILabel(frame: view.bounds)
         message.backgroundColor = .white
@@ -101,6 +104,10 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
         view.bringSubviewToFront(message)
 
         noResultsLabel = message
+    }
+
+    func hideNoResults() {
+        noResultsLabel?.removeFromSuperview()
     }
 
     func routeToMediaDetails(viewModel: Search.DetailsViewModel) {
@@ -142,5 +149,49 @@ extension SearchViewController: UITableViewDelegate {
         let media = medias[indexPath.row]
         let request = Search.DetailsRequest(media: media)
         interactor?.didSelectMedia(request: request)
+    }
+}
+
+// MARK: - UISearchController
+extension SearchViewController {
+    func setupSearchController() {
+        let attributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.white
+        ]
+
+        let appearance = UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self])
+        appearance.setTitleTextAttributes(attributes, for: .normal)
+
+        searchController.searchBar.placeholder = "Nombre de la canción"
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.barStyle = .black
+        searchController.searchBar.barTintColor = .white
+        searchController.searchBar.delegate = self
+
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+
+        definesPresentationContext = true
+    }
+}
+
+extension SearchViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let term = searchBar.text?.lowercased() else {
+            return
+        }
+
+        tableView.reloadData()
+        hideNoResults()
+
+        let request = Search.Request(searchTerm: term, page: 1)
+        interactor?.startSearch(request: request)
+    }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        medias = []
+
+        tableView.reloadData()
+        hideNoResults()
     }
 }
