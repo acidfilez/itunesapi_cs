@@ -72,4 +72,21 @@ class SearchInteractorTests: XCTestCase {
         // Then
         XCTAssertTrue(workerSpy.fetchLocalResultsCalled)
     }
+
+    func testNextPage() {
+        // Given
+        let request = Search.Request(searchTerm: "test album", page: 2)
+        let workerSpy = SearchWorkerSpy()
+        let presenterSpy = SearchPresentationLogicSpy()
+
+        sut.worker = workerSpy
+        sut.presenter = presenterSpy
+
+        // When
+        sut.nextPage(request: request)
+
+        // Then
+        XCTAssertTrue(workerSpy.fetchMediaCalled)
+        XCTAssertTrue(presenterSpy.displayResultsCalled)
+    }
 }
