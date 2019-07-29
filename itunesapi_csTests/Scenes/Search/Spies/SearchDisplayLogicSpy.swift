@@ -10,4 +10,9 @@
 import XCTest
 
 class SearchDisplayLogicSpy: SearchDisplayLogic {
+    var displayResultsCalled = false
+
+    func displayResults(viewModel: Search.ViewModel) {
+        displayResultsCalled = true
+    }
 }

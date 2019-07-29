@@ -20,5 +20,8 @@ enum Search {
     }
 
     struct Response {}
-    struct ViewModel {}
+
+    struct ViewModel {
+        let medias: [Media]
+    }
 }

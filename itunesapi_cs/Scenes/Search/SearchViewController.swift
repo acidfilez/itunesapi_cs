@@ -13,7 +13,7 @@
 import UIKit
 
 protocol SearchDisplayLogic: class {
-//    func displaySomething(viewModel: Search.Something.ViewModel)
+    func displayResults(viewModel: Search.ViewModel)
 }
 
 class SearchViewController: UIViewController, SearchDisplayLogic {
@@ -64,4 +64,7 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
         super.viewDidLoad()
     }
 
+    func displayResults(viewModel: Search.ViewModel) {
+        
+    }
 }
