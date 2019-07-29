@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2CFECFEB22ED2E5F00F8592E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFECFEA22ED2E5F00F8592E /* AppDelegate.swift */; };
 		2CFECFED22ED2E5F00F8592E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFECFEC22ED2E5F00F8592E /* ViewController.swift */; };
-		2CFECFF322ED2E5F00F8592E /* itunesapi_cs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2CFECFF122ED2E5F00F8592E /* itunesapi_cs.xcdatamodeld */; };
 		2CFECFF522ED2E6100F8592E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CFECFF422ED2E6100F8592E /* Assets.xcassets */; };
 		2CFECFF822ED2E6100F8592E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CFECFF622ED2E6100F8592E /* LaunchScreen.storyboard */; };
 		2CFED00322ED2E6100F8592E /* itunesapi_csTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED00222ED2E6100F8592E /* itunesapi_csTests.swift */; };
@@ -37,7 +36,7 @@
 		2CFED04922ED3C9700F8592E /* SearchNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED04822ED3C9700F8592E /* SearchNode.swift */; };
 		2CFED04C22EF6D5900F8592E /* SearchCoreDataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED04B22EF6D5900F8592E /* SearchCoreDataWorker.swift */; };
 		2CFED04E22EF6DB100F8592E /* SearchCoreDataWorkerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED04D22EF6DB100F8592E /* SearchCoreDataWorkerSpy.swift */; };
-		2CFED05222EF6E5900F8592E /* itunesapi_cs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED05022EF6E5900F8592E /* itunesapi_cs.xcdatamodeld */; };
+		2CFED05522EF7DC400F8592E /* itunesapi_cs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED05022EF6E5900F8592E /* itunesapi_cs.xcdatamodeld */; };
 		7E230F1A2470A933C764020B /* Pods_itunesapi_cs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 477FECDBB89B67DD359C9558 /* Pods_itunesapi_cs.framework */; };
 		A4FBF1F421177EF708DD085D /* Pods_itunesapi_csTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 621182D182E1E907CA4AB043 /* Pods_itunesapi_csTests.framework */; };
 /* End PBXBuildFile section */
@@ -56,7 +55,6 @@
 		2CFECFE722ED2E5F00F8592E /* itunesapi_cs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = itunesapi_cs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CFECFEA22ED2E5F00F8592E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CFECFEC22ED2E5F00F8592E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2CFECFF222ED2E5F00F8592E /* itunesapi_cs.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = itunesapi_cs.xcdatamodel; sourceTree = "<group>"; };
 		2CFECFF422ED2E6100F8592E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CFECFF722ED2E6100F8592E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CFECFF922ED2E6100F8592E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -150,7 +148,6 @@
 				2CFECFF422ED2E6100F8592E /* Assets.xcassets */,
 				2CFECFF622ED2E6100F8592E /* LaunchScreen.storyboard */,
 				2CFECFF922ED2E6100F8592E /* Info.plist */,
-				2CFECFF122ED2E5F00F8592E /* itunesapi_cs.xcdatamodeld */,
 			);
 			path = itunesapi_cs;
 			sourceTree = "<group>";
@@ -483,7 +480,7 @@
 				2CFECFED22ED2E5F00F8592E /* ViewController.swift in Sources */,
 				2CFED02C22ED34C200F8592E /* SearchModels.swift in Sources */,
 				2CFED04922ED3C9700F8592E /* SearchNode.swift in Sources */,
-				2CFED05222EF6E5900F8592E /* itunesapi_cs.xcdatamodeld in Sources */,
+				2CFED05522EF7DC400F8592E /* itunesapi_cs.xcdatamodeld in Sources */,
 				2CFED01922ED307E00F8592E /* Media.swift in Sources */,
 				2CFED02D22ED34C200F8592E /* SearchViewController.swift in Sources */,
 				2CFED02E22ED34C200F8592E /* SearchInteractor.swift in Sources */,
@@ -491,7 +488,6 @@
 				2CFED01522ED2FAA00F8592E /* URL+Extensions.swift in Sources */,
 				2CFECFEB22ED2E5F00F8592E /* AppDelegate.swift in Sources */,
 				2CFED02A22ED34C200F8592E /* SearchWorker.swift in Sources */,
-				2CFECFF322ED2E5F00F8592E /* itunesapi_cs.xcdatamodeld in Sources */,
 				2CFED01D22ED30C900F8592E /* Album.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -766,16 +762,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		2CFECFF122ED2E5F00F8592E /* itunesapi_cs.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				2CFECFF222ED2E5F00F8592E /* itunesapi_cs.xcdatamodel */,
-			);
-			currentVersion = 2CFECFF222ED2E5F00F8592E /* itunesapi_cs.xcdatamodel */;
-			path = itunesapi_cs.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
 		2CFED05022EF6E5900F8592E /* itunesapi_cs.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (

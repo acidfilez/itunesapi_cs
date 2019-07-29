@@ -65,10 +65,12 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        interactor?.startSearch(request: Search.Request(searchTerm: "epica", page: 1), localResultsOnly: false)
     }
 
     func displayResults(viewModel: Search.ViewModel) {
         medias = viewModel.medias
+        print("MEDIAS: \(medias)")
     }
 
     func displayNoResults() {

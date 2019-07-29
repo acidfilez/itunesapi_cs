@@ -143,4 +143,24 @@ class SearchInteractorTests: XCTestCase {
         XCTAssertEqual(sut.currentMedias.count, 2)
         XCTAssertEqual(sut.currentPage, 1)
     }
+
+    func testSearchesShouldSaveToCoreData() {
+        // Given
+        let request = Search.Request(searchTerm: "test album", page: 1)
+
+        let workerSpy = SearchWorkerSpy()
+        let coreDataWorkerSpy = SearchCoreDataWorkerSpy()
+        let presenterSpy = SearchPresentationLogicSpy()
+
+        sut.worker = workerSpy
+        sut.coreDataWorker = coreDataWorkerSpy
+        sut.presenter = presenterSpy
+
+        // When
+        sut.startSearch(request: request)
+
+        // Then
+        XCTAssertTrue(coreDataWorkerSpy.deleteLocalResultsCalled)
+        XCTAssertTrue(coreDataWorkerSpy.saveLocalResultsCalled)
+    }
 }
