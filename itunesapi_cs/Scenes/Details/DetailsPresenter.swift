@@ -14,6 +14,7 @@ import UIKit
 
 protocol DetailsPresentationLogic {
     func presentAlbumDetails(response: Details.Response)
+    func presentAlbumDetailsErrorMessage()
 }
 
 class DetailsPresenter: DetailsPresentationLogic {
@@ -22,6 +23,10 @@ class DetailsPresenter: DetailsPresentationLogic {
     // MARK: Do something
 
     func presentAlbumDetails(response: Details.Response) {
+        
+    }
+
+    func presentAlbumDetailsErrorMessage() {
         
     }
 }

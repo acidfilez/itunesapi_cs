@@ -16,4 +16,10 @@ class DetailsPresentationLogicSpy: DetailsPresentationLogic {
     func presentAlbumDetails(response: Details.Response) {
         presentAlbumDetailsCalled = true
     }
+
+    var presentAlbumDetailsErrorMessageCalled = false
+
+    func presentAlbumDetailsErrorMessage() {
+        presentAlbumDetailsErrorMessageCalled = true
+    }
 }

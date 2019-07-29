@@ -90,6 +90,6 @@ class DetailsInteractorTests: XCTestCase {
 
         // Then
         XCTAssertFalse(presenterSpy.presentAlbumDetailsCalled)
-        XCTAssertTrue(presenterSpy.presentAlbumDetailsErrorMessage)
+        XCTAssertTrue(presenterSpy.presentAlbumDetailsErrorMessageCalled)
     }
 }
