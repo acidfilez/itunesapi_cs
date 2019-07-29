@@ -59,4 +59,18 @@ class SearchInteractorTests: XCTestCase {
         XCTAssertTrue(workerSpy!.fetchMediaCalled)
         XCTAssertTrue(presenterSpy!.displayResultsCalled)
     }
+
+    func testSearchCoreData() {
+        // Given
+        let request = Search.Request(searchTerm: "test album")
+        let workerSpy = SearchCoreDataWorkerSpy()
+        sut.coreDataWorker = workerSpy
+
+        // When
+        sut.startSearch(request: request, localResultsOnly: true)
+
+        // Then
+        XCTAssertTrue(workerSpy.deleteLocalResultsCalled)
+        XCTAssertTrue(workerSpy.fetchLocalResultsCalled)
+    }
 }

@@ -35,6 +35,9 @@
 		2CFED04522ED37CC00F8592E /* SearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CFED04422ED37CC00F8592E /* SearchViewController.storyboard */; };
 		2CFED04722ED3BA800F8592E /* SearchWorkerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED04622ED3BA800F8592E /* SearchWorkerSpy.swift */; };
 		2CFED04922ED3C9700F8592E /* SearchNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED04822ED3C9700F8592E /* SearchNode.swift */; };
+		2CFED04C22EF6D5900F8592E /* SearchCoreDataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED04B22EF6D5900F8592E /* SearchCoreDataWorker.swift */; };
+		2CFED04E22EF6DB100F8592E /* SearchCoreDataWorkerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED04D22EF6DB100F8592E /* SearchCoreDataWorkerSpy.swift */; };
+		2CFED05222EF6E5900F8592E /* itunesapi_cs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED05022EF6E5900F8592E /* itunesapi_cs.xcdatamodeld */; };
 		7E230F1A2470A933C764020B /* Pods_itunesapi_cs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 477FECDBB89B67DD359C9558 /* Pods_itunesapi_cs.framework */; };
 		A4FBF1F421177EF708DD085D /* Pods_itunesapi_csTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 621182D182E1E907CA4AB043 /* Pods_itunesapi_csTests.framework */; };
 /* End PBXBuildFile section */
@@ -82,6 +85,9 @@
 		2CFED04422ED37CC00F8592E /* SearchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchViewController.storyboard; sourceTree = "<group>"; };
 		2CFED04622ED3BA800F8592E /* SearchWorkerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWorkerSpy.swift; sourceTree = "<group>"; };
 		2CFED04822ED3C9700F8592E /* SearchNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNode.swift; sourceTree = "<group>"; };
+		2CFED04B22EF6D5900F8592E /* SearchCoreDataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoreDataWorker.swift; sourceTree = "<group>"; };
+		2CFED04D22EF6DB100F8592E /* SearchCoreDataWorkerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoreDataWorkerSpy.swift; sourceTree = "<group>"; };
+		2CFED05122EF6E5900F8592E /* itunesapi_cs.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = itunesapi_cs.xcdatamodel; sourceTree = "<group>"; };
 		36249240FD659A9FD438996A /* Pods-itunesapi_csTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itunesapi_csTests.debug.xcconfig"; path = "Target Support Files/Pods-itunesapi_csTests/Pods-itunesapi_csTests.debug.xcconfig"; sourceTree = "<group>"; };
 		46F90A867DA3291FB22213DB /* Pods-itunesapi_csTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itunesapi_csTests.release.xcconfig"; path = "Target Support Files/Pods-itunesapi_csTests/Pods-itunesapi_csTests.release.xcconfig"; sourceTree = "<group>"; };
 		477FECDBB89B67DD359C9558 /* Pods_itunesapi_cs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_itunesapi_cs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,6 +176,7 @@
 		2CFED00E22ED2F6500F8592E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2CFED04F22EF6E4600F8592E /* CoreData */,
 				2CFED04222ED37C000F8592E /* Scenes */,
 			);
 			path = Resources;
@@ -219,6 +226,7 @@
 				2CFED02622ED34C200F8592E /* SearchModels.swift */,
 				2CFED02722ED34C200F8592E /* SearchViewController.swift */,
 				2CFED02822ED34C200F8592E /* SearchInteractor.swift */,
+				2CFED04B22EF6D5900F8592E /* SearchCoreDataWorker.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -250,6 +258,7 @@
 				2CFED03E22ED36C100F8592E /* SearchPresentationLogicSpy.swift */,
 				2CFED04022ED372000F8592E /* SearchDisplayLogicSpy.swift */,
 				2CFED04622ED3BA800F8592E /* SearchWorkerSpy.swift */,
+				2CFED04D22EF6DB100F8592E /* SearchCoreDataWorkerSpy.swift */,
 			);
 			path = Spies;
 			sourceTree = "<group>";
@@ -268,6 +277,14 @@
 				2CFED04422ED37CC00F8592E /* SearchViewController.storyboard */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		2CFED04F22EF6E4600F8592E /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				2CFED05022EF6E5900F8592E /* itunesapi_cs.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		9D63D54D6E94E8CB44E6E600 /* Pods */ = {
@@ -466,9 +483,11 @@
 				2CFECFED22ED2E5F00F8592E /* ViewController.swift in Sources */,
 				2CFED02C22ED34C200F8592E /* SearchModels.swift in Sources */,
 				2CFED04922ED3C9700F8592E /* SearchNode.swift in Sources */,
+				2CFED05222EF6E5900F8592E /* itunesapi_cs.xcdatamodeld in Sources */,
 				2CFED01922ED307E00F8592E /* Media.swift in Sources */,
 				2CFED02D22ED34C200F8592E /* SearchViewController.swift in Sources */,
 				2CFED02E22ED34C200F8592E /* SearchInteractor.swift in Sources */,
+				2CFED04C22EF6D5900F8592E /* SearchCoreDataWorker.swift in Sources */,
 				2CFED01522ED2FAA00F8592E /* URL+Extensions.swift in Sources */,
 				2CFECFEB22ED2E5F00F8592E /* AppDelegate.swift in Sources */,
 				2CFED02A22ED34C200F8592E /* SearchWorker.swift in Sources */,
@@ -490,6 +509,7 @@
 				2CFED03F22ED36C100F8592E /* SearchPresentationLogicSpy.swift in Sources */,
 				2CFED04722ED3BA800F8592E /* SearchWorkerSpy.swift in Sources */,
 				2CFED03822ED35E700F8592E /* SearchInteractorTests.swift in Sources */,
+				2CFED04E22EF6DB100F8592E /* SearchCoreDataWorkerSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -752,6 +772,16 @@
 				2CFECFF222ED2E5F00F8592E /* itunesapi_cs.xcdatamodel */,
 			);
 			currentVersion = 2CFECFF222ED2E5F00F8592E /* itunesapi_cs.xcdatamodel */;
+			path = itunesapi_cs.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		2CFED05022EF6E5900F8592E /* itunesapi_cs.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2CFED05122EF6E5900F8592E /* itunesapi_cs.xcdatamodel */,
+			);
+			currentVersion = 2CFED05122EF6E5900F8592E /* itunesapi_cs.xcdatamodel */;
 			path = itunesapi_cs.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

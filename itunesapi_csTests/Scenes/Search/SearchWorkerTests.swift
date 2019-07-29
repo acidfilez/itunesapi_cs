@@ -34,7 +34,7 @@ class SearchWorkerTests: XCTestCase {
     func setupSearchWorker() {
         sut = SearchWorker()
     }
-    
+
     // MARK: Tests
 
     func testSomething() {

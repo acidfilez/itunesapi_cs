@@ -22,6 +22,7 @@ protocol SearchDataStore {
 class SearchInteractor: SearchBusinessLogic, SearchDataStore {
     var presenter: SearchPresentationLogic?
     var worker: SearchWorker? = SearchWorker()
+    var coreDataWorker: SearchCoreDataWorker? = SearchCoreDataWorker()
 
     func startSearch(request: Search.Request) {
         worker?.fetchMedia(
