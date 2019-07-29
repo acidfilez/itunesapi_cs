@@ -17,6 +17,7 @@ enum Search {
 
     struct Request {
         let searchTerm: String
+        let page: Int
     }
 
     struct Response {

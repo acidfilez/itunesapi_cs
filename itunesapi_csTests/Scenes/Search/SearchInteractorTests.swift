@@ -48,9 +48,7 @@ class SearchInteractorTests: XCTestCase {
     // MARK: Tests
     func testSearchStarted() {
         // Given
-        let request = Search.Request(
-            searchTerm: "test album"
-        )
+        let request = Search.Request(searchTerm: "test album", page: 1)
 
         // When
         sut.startSearch(request: request)
@@ -62,7 +60,7 @@ class SearchInteractorTests: XCTestCase {
 
     func testSearchCoreData() {
         // Given
-        let request = Search.Request(searchTerm: "test album")
+        let request = Search.Request(searchTerm: "test album", page: 1)
         let workerSpy = SearchCoreDataWorkerSpy()
         sut.coreDataWorker = workerSpy
 

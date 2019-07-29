@@ -19,4 +19,10 @@ class SearchBusinessLogicSpy: SearchBusinessLogic {
     func startSearch(request: Search.Request, localResultsOnly: Bool) {
         startSearchCalled = true
     }
+
+    var nextPageCalled = false
+    
+    func nextPage(request: Search.Request) {
+        nextPageCalled = true
+    }
 }
