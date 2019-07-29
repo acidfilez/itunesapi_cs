@@ -21,4 +21,10 @@ class SearchPresentationLogicSpy: SearchPresentationLogic {
     func displayMediaDetails(response: Search.DetailsResponse) {
         displayMediaDetailsCalled = true
     }
+
+    var displayLoadingIndicatorCalled = false
+
+    func displayLoadingIndicator() {
+        displayLoadingIndicatorCalled = true
+    }
 }

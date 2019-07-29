@@ -15,6 +15,7 @@ import UIKit
 protocol SearchPresentationLogic {
     func displayResults(response: Search.Response)
     func displayMediaDetails(response: Search.DetailsResponse)
+    func displayLoadingIndicator()
 }
 
 class SearchPresenter: SearchPresentationLogic {
@@ -34,5 +35,9 @@ class SearchPresenter: SearchPresentationLogic {
     func displayMediaDetails(response: Search.DetailsResponse) {
         let viewModel = Search.DetailsViewModel(media: response.media)
         viewController?.routeToMediaDetails(viewModel: viewModel)
+    }
+
+    func displayLoadingIndicator() {
+
     }
 }

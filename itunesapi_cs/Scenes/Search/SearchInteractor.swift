@@ -54,6 +54,8 @@ class SearchInteractor: SearchBusinessLogic, SearchDataStore {
             currentMedias = medias
             presenter?.displayResults(response: response)
         } else {
+            presenter?.displayLoadingIndicator()
+            
             worker?.fetchMedia(
                 for: request.searchTerm,
                 page: request.page,
