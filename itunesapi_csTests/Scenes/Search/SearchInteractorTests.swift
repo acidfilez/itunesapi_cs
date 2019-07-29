@@ -18,14 +18,6 @@ class SearchInteractorTests: XCTestCase {
 
     var sut: SearchInteractor!
 
-    var presenterSpy: SearchPresentationLogicSpy? {
-        return sut.presenter as? SearchPresentationLogicSpy
-    }
-
-    var workerSpy: SearchWorkerSpy? {
-        return sut.worker as? SearchWorkerSpy
-    }
-
     // MARK: Test lifecycle
 
     override func setUp() {
@@ -41,21 +33,24 @@ class SearchInteractorTests: XCTestCase {
 
     func setupSearchInteractor() {
         sut = SearchInteractor()
-        sut.presenter = SearchPresentationLogicSpy()
-        sut.worker = SearchWorkerSpy()
     }
 
     // MARK: Tests
     func testSearchStarted() {
         // Given
         let request = Search.Request(searchTerm: "test album", page: 1)
+        let presenterSpy = SearchPresentationLogicSpy()
+        let workerSpy = SearchWorkerSpy()
+        sut.presenter = presenterSpy
+        sut.worker = workerSpy
 
         // When
         sut.startSearch(request: request)
 
         // Then
-        XCTAssertTrue(workerSpy!.fetchMediaCalled)
-        XCTAssertTrue(presenterSpy!.displayResultsCalled)
+        XCTAssertTrue(presenterSpy.displayLoadingIndicatorCalled)
+        XCTAssertTrue(workerSpy.fetchMediaCalled)
+        XCTAssertTrue(presenterSpy.displayResultsCalled)
     }
 
     func testSearchCoreData() {
