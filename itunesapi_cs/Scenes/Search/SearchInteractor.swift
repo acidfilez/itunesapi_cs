@@ -17,6 +17,7 @@ protocol SearchBusinessLogic {
     func startSearch(request: Search.Request, localResultsOnly: Bool)
 
     func nextPage(request: Search.Request)
+    func didSelectMedia(request: Search.DetailsRequest)
 }
 
 protocol SearchDataStore {
@@ -93,5 +94,10 @@ class SearchInteractor: SearchBusinessLogic, SearchDataStore {
                 self.presenter?.displayResults(response: response)
             }
         )
+    }
+
+    func didSelectMedia(request: Search.DetailsRequest) {
+        let response = Search.DetailsResponse(media: request.media)
+        presenter?.displayMediaDetails(response: response)
     }
 }

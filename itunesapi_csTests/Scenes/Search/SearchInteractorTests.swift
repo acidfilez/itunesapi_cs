@@ -162,4 +162,29 @@ class SearchInteractorTests: XCTestCase {
         // Then
         XCTAssertTrue(coreDataWorkerSpy.saveLocalResultsCalled)
     }
+
+    func testDidSelectMedia() {
+        // Given
+        let media = Media(
+            wrapperType: "wrapper type",
+            artistName: "artist",
+            collectionId: 1,
+            collectionName: "collection name",
+            kind: "kind",
+            trackId: 1,
+            trackName: "track 1",
+            trackNumber: 1,
+            artwork: "artwork",
+            previewUrl: nil
+        )
+        let request = Search.DetailsRequest(media: media)
+        let presenterSpy = SearchPresentationLogicSpy()
+        sut.presenter = presenterSpy
+
+        // When
+        sut.didSelectMedia(request: request)
+
+        // Then
+        XCTAssertTrue(presenterSpy.displayMediaDetailsCalled)
+    }
 }

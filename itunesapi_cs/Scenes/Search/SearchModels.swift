@@ -27,4 +27,16 @@ enum Search {
     struct ViewModel {
         let medias: [Media]
     }
+
+    struct DetailsRequest {
+        let media: Media
+    }
+
+    struct DetailsResponse {
+        let media: Media
+    }
+
+    struct DetailsViewModel {
+        let media: Media
+    }
 }

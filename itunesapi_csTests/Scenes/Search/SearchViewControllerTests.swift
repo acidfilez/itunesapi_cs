@@ -77,6 +77,7 @@ class SearchViewControllerTests: XCTestCase {
         let viewModel = Search.ViewModel(medias: medias)
 
         // When
+        sut.loadView()
         sut.displayResults(viewModel: viewModel)
 
         // Then

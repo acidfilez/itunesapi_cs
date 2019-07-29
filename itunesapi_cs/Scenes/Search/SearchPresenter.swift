@@ -14,6 +14,7 @@ import UIKit
 
 protocol SearchPresentationLogic {
     func displayResults(response: Search.Response)
+    func displayMediaDetails(response: Search.DetailsResponse)
 }
 
 class SearchPresenter: SearchPresentationLogic {
@@ -28,5 +29,9 @@ class SearchPresenter: SearchPresentationLogic {
         } else {
             viewController?.displayResults(viewModel: viewModel)
         }
+    }
+
+    func displayMediaDetails(response: Search.DetailsResponse) {
+        
     }
 }

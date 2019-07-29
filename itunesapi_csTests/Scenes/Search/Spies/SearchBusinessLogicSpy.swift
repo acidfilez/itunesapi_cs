@@ -25,4 +25,10 @@ class SearchBusinessLogicSpy: SearchBusinessLogic {
     func nextPage(request: Search.Request) {
         nextPageCalled = true
     }
+
+    var didSelectMediaCalled = false
+
+    func didSelectMedia(request: Search.DetailsRequest) {
+        didSelectMediaCalled = true
+    }
 }

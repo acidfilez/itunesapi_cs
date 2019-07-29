@@ -15,6 +15,8 @@ import UIKit
 protocol SearchDisplayLogic: class {
     func displayResults(viewModel: Search.ViewModel)
     func displayNoResults()
+
+    func routeToMediaDetails(viewModel: Search.DetailsViewModel)
 }
 
 class SearchViewController: UIViewController, SearchDisplayLogic {
@@ -23,6 +25,7 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
 
     var medias: [Media] = []
 
+    @IBOutlet weak var tableView: UITableView!
     private weak var noResultsLabel: UILabel?
 
     // MARK: Object lifecycle
@@ -67,11 +70,20 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        interactor?.startSearch(request: Search.Request(searchTerm: "epica", page: 1), localResultsOnly: false)
+        tableView.dataSource = self
+//        tableView.delegate = self
+        interactor?.startSearch(request: Search.Request(searchTerm: "epica", page: 1), localResultsOnly: false)
     }
 
     func displayResults(viewModel: Search.ViewModel) {
         medias = viewModel.medias
+        tableView.reloadData()
+
+        if medias.isEmpty {
+            self.tableView.beginUpdates()
+            self.tableView.setContentOffset(.zero, animated: true)
+            self.tableView.endUpdates()
+        }
     }
 
     func displayNoResults() {
@@ -89,5 +101,46 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
         view.bringSubviewToFront(message)
 
         noResultsLabel = message
+    }
+
+    func routeToMediaDetails(viewModel: Search.DetailsViewModel) {
+        
+    }
+}
+
+// MARK: - UITableView
+
+extension SearchViewController: UITableViewDataSource {
+    static let contentCellIdentifier = "SearchTableViewCell"
+    static let emptyCellIdentifier = "SearchEmptyTableViewCell"
+
+    // MARK: Data source
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard medias.count != 0 else { return 1 }
+        return medias.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellIdentifier = medias.count != 0 ? SearchViewController.contentCellIdentifier : SearchViewController.emptyCellIdentifier
+        let abstractCell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+
+        if let cell = abstractCell as? SearchTableViewCell {
+            cell.media = medias[indexPath.row]
+        }
+
+        return abstractCell
+    }
+}
+
+extension SearchViewController: UITableViewDelegate {
+    // MARK: Delegate
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+
+        let media = medias[indexPath.row]
+        let request = Search.DetailsRequest(media: media)
+        interactor?.didSelectMedia(request: request)
     }
 }

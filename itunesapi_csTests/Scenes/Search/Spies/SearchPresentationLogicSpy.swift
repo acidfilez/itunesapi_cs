@@ -15,4 +15,10 @@ class SearchPresentationLogicSpy: SearchPresentationLogic {
     func displayResults(response: Search.Response) {
         displayResultsCalled = true
     }
+
+    var displayMediaDetailsCalled = false
+
+    func displayMediaDetails(response: Search.DetailsResponse) {
+        displayMediaDetailsCalled = true
+    }
 }
