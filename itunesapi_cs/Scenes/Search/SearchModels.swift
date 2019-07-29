@@ -19,7 +19,9 @@ enum Search {
         let searchTerm: String
     }
 
-    struct Response {}
+    struct Response {
+        let medias: [Media]
+    }
 
     struct ViewModel {
         let medias: [Media]

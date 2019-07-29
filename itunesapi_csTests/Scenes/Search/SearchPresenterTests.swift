@@ -67,9 +67,10 @@ class SearchPresenterTests: XCTestCase {
                 previewUrl: nil
             )
         ]
+        let response = Search.Response(medias: medias)
 
         // When
-        sut.displayResults(medias: medias)
+        sut.displayResults(response: response)
 
         // Then
         XCTAssertTrue(viewControllerSpy.displayResultsCalled)
@@ -80,9 +81,10 @@ class SearchPresenterTests: XCTestCase {
         let viewControllerSpy = SearchDisplayLogicSpy()
         sut.viewController = viewControllerSpy
         let medias: [Media] = []
+        let response = Search.Response(medias: medias)
 
         // When
-        sut.displayResults(medias: medias)
+        sut.displayResults(response: response)
 
         // Then
         XCTAssertTrue(viewControllerSpy.displayNoResultsCalled)

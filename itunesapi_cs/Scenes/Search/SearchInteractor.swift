@@ -28,7 +28,8 @@ class SearchInteractor: SearchBusinessLogic, SearchDataStore {
             for: request.searchTerm,
             page: 1,
             completion: { (success, medias) in
-                self.presenter?.displayResults(medias: medias)
+                let response = Search.Response(medias: medias)
+                self.presenter?.displayResults(response: response)
             }
         )
     }

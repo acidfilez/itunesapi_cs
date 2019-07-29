@@ -12,7 +12,7 @@ import XCTest
 class SearchPresentationLogicSpy: SearchPresentationLogic {
     var displayResultsCalled = false
 
-    func displayResults(medias: [Media]) {
+    func displayResults(response: Search.Response) {
         displayResultsCalled = true
     }
 }

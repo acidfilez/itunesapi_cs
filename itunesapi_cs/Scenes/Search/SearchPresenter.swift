@@ -13,13 +13,14 @@
 import UIKit
 
 protocol SearchPresentationLogic {
-    func displayResults(medias: [Media])
+    func displayResults(response: Search.Response)
 }
 
 class SearchPresenter: SearchPresentationLogic {
     weak var viewController: SearchDisplayLogic?
 
-    func displayResults(medias: [Media]) {
+    func displayResults(response: Search.Response) {
+        let medias = response.medias
         let viewModel = Search.ViewModel(medias: medias)
 
         if medias.isEmpty {
