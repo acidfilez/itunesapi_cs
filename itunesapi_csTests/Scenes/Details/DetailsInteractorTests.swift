@@ -37,7 +37,7 @@ class DetailsInteractorTests: XCTestCase {
 
     // MARK: Tests
 
-    func testFetchAlbumDetails() {
+    func testFetchAlbumDetailsSuccess() {
         // Given
         let media = Media(
             wrapperType: "wrapper type",
@@ -62,5 +62,34 @@ class DetailsInteractorTests: XCTestCase {
 
         // Then
         XCTAssertTrue(presenterSpy.presentAlbumDetailsCalled)
+    }
+
+    func testFetchAlbumDetailsFailure() {
+        // Given
+        let media = Media(
+            wrapperType: "wrapper type",
+            artistName: "artist",
+            collectionId: 1,
+            collectionName: "collection name",
+            kind: "kind",
+            trackId: 1,
+            trackName: "track 1",
+            trackNumber: 1,
+            artwork: "artwork",
+            previewUrl: nil
+        )
+        let request = Details.Request(media: media)
+        let presenterSpy = DetailsPresentationLogicSpy()
+        let workerSpy = DetailsWorkerSpy()
+        workerSpy.shouldFailFetchAlbumDetails = true
+        sut.presenter = presenterSpy
+        sut.worker = workerSpy
+
+        // When
+        sut.fetchAlbumDetails(request: request)
+
+        // Then
+        XCTAssertFalse(presenterSpy.presentAlbumDetailsCalled)
+        XCTAssertTrue(presenterSpy.presentAlbumDetailsErrorMessage)
     }
 }
