@@ -37,6 +37,8 @@
 		2CFED04C22EF6D5900F8592E /* SearchCoreDataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED04B22EF6D5900F8592E /* SearchCoreDataWorker.swift */; };
 		2CFED04E22EF6DB100F8592E /* SearchCoreDataWorkerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED04D22EF6DB100F8592E /* SearchCoreDataWorkerSpy.swift */; };
 		2CFED05522EF7DC400F8592E /* itunesapi_cs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED05022EF6E5900F8592E /* itunesapi_cs.xcdatamodeld */; };
+		2CFED05922EF830B00F8592E /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED05822EF830B00F8592E /* SearchTableViewCell.swift */; };
+		2CFED05E22EF837600F8592E /* SearchTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED05D22EF837600F8592E /* SearchTableViewCellTests.swift */; };
 		7E230F1A2470A933C764020B /* Pods_itunesapi_cs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 477FECDBB89B67DD359C9558 /* Pods_itunesapi_cs.framework */; };
 		A4FBF1F421177EF708DD085D /* Pods_itunesapi_csTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 621182D182E1E907CA4AB043 /* Pods_itunesapi_csTests.framework */; };
 /* End PBXBuildFile section */
@@ -86,6 +88,8 @@
 		2CFED04B22EF6D5900F8592E /* SearchCoreDataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoreDataWorker.swift; sourceTree = "<group>"; };
 		2CFED04D22EF6DB100F8592E /* SearchCoreDataWorkerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoreDataWorkerSpy.swift; sourceTree = "<group>"; };
 		2CFED05122EF6E5900F8592E /* itunesapi_cs.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = itunesapi_cs.xcdatamodel; sourceTree = "<group>"; };
+		2CFED05822EF830B00F8592E /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		2CFED05D22EF837600F8592E /* SearchTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCellTests.swift; sourceTree = "<group>"; };
 		36249240FD659A9FD438996A /* Pods-itunesapi_csTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itunesapi_csTests.debug.xcconfig"; path = "Target Support Files/Pods-itunesapi_csTests/Pods-itunesapi_csTests.debug.xcconfig"; sourceTree = "<group>"; };
 		46F90A867DA3291FB22213DB /* Pods-itunesapi_csTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itunesapi_csTests.release.xcconfig"; path = "Target Support Files/Pods-itunesapi_csTests/Pods-itunesapi_csTests.release.xcconfig"; sourceTree = "<group>"; };
 		477FECDBB89B67DD359C9558 /* Pods_itunesapi_cs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_itunesapi_cs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -217,6 +221,7 @@
 		2CFED02222ED34B500F8592E /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				2CFED05722EF82F800F8592E /* Views */,
 				2CFED02322ED34C200F8592E /* SearchPresenter.swift */,
 				2CFED02422ED34C200F8592E /* SearchWorker.swift */,
 				2CFED02522ED34C200F8592E /* SearchRouter.swift */,
@@ -239,6 +244,7 @@
 		2CFED03022ED35B200F8592E /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				2CFED05A22EF832C00F8592E /* Views */,
 				2CFED03B22ED360E00F8592E /* Spies */,
 				2CFED03322ED35E700F8592E /* SearchViewControllerTests.swift */,
 				2CFED03422ED35E700F8592E /* SearchInteractorTests.swift */,
@@ -282,6 +288,22 @@
 				2CFED05022EF6E5900F8592E /* itunesapi_cs.xcdatamodeld */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		2CFED05722EF82F800F8592E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2CFED05822EF830B00F8592E /* SearchTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2CFED05A22EF832C00F8592E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2CFED05D22EF837600F8592E /* SearchTableViewCellTests.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		9D63D54D6E94E8CB44E6E600 /* Pods */ = {
@@ -481,6 +503,7 @@
 				2CFED02C22ED34C200F8592E /* SearchModels.swift in Sources */,
 				2CFED04922ED3C9700F8592E /* SearchNode.swift in Sources */,
 				2CFED05522EF7DC400F8592E /* itunesapi_cs.xcdatamodeld in Sources */,
+				2CFED05922EF830B00F8592E /* SearchTableViewCell.swift in Sources */,
 				2CFED01922ED307E00F8592E /* Media.swift in Sources */,
 				2CFED02D22ED34C200F8592E /* SearchViewController.swift in Sources */,
 				2CFED02E22ED34C200F8592E /* SearchInteractor.swift in Sources */,
@@ -500,6 +523,7 @@
 				2CFED03A22ED35E700F8592E /* SearchPresenterTests.swift in Sources */,
 				2CFED03922ED35E700F8592E /* SearchWorkerTests.swift in Sources */,
 				2CFED03D22ED362300F8592E /* SearchBusinessLogicSpy.swift in Sources */,
+				2CFED05E22EF837600F8592E /* SearchTableViewCellTests.swift in Sources */,
 				2CFED04122ED372000F8592E /* SearchDisplayLogicSpy.swift in Sources */,
 				2CFED00322ED2E6100F8592E /* itunesapi_csTests.swift in Sources */,
 				2CFED03F22ED36C100F8592E /* SearchPresentationLogicSpy.swift in Sources */,

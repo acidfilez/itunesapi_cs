@@ -23,6 +23,8 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
 
     var medias: [Media] = []
 
+    private weak var noResultsLabel: UILabel?
+
     // MARK: Object lifecycle
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -65,15 +67,27 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        interactor?.startSearch(request: Search.Request(searchTerm: "epica", page: 1), localResultsOnly: false)
+//        interactor?.startSearch(request: Search.Request(searchTerm: "epica", page: 1), localResultsOnly: false)
     }
 
     func displayResults(viewModel: Search.ViewModel) {
         medias = viewModel.medias
-        print("MEDIAS: \(medias)")
     }
 
     func displayNoResults() {
         medias = []
+
+        noResultsLabel?.removeFromSuperview()
+
+        let message = UILabel(frame: view.bounds)
+        message.backgroundColor = .white
+        message.textColor = .darkGray
+        message.text = "No hay resultados."
+        message.textAlignment = .center
+
+        view.addSubview(message)
+        view.bringSubviewToFront(message)
+
+        noResultsLabel = message
     }
 }
