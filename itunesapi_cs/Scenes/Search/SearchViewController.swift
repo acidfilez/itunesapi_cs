@@ -21,6 +21,8 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
     var interactor: SearchBusinessLogic?
     var router: (NSObjectProtocol & SearchRoutingLogic & SearchDataPassing)?
 
+    var medias: [Media] = []
+
     // MARK: Object lifecycle
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -66,7 +68,7 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
     }
 
     func displayResults(viewModel: Search.ViewModel) {
-        
+        medias = viewModel.medias
     }
 
     func displayNoResults() {

@@ -35,7 +35,7 @@ class SearchViewControllerTests: XCTestCase {
     
     func setupSearchViewController() {
         let bundle = Bundle.main
-        let storyboard = UIStoryboard(name: "Main", bundle: bundle)
+        let storyboard = UIStoryboard(name: "SearchViewController", bundle: bundle)
         sut = (storyboard.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController)
     }
 
