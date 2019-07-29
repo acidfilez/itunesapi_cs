@@ -21,6 +21,11 @@ class SearchPresenter: SearchPresentationLogic {
 
     func displayResults(medias: [Media]) {
         let viewModel = Search.ViewModel(medias: medias)
-        viewController?.displayResults(viewModel: viewModel)
+
+        if medias.isEmpty {
+            viewController?.displayNoResults()
+        } else {
+            viewController?.displayResults(viewModel: viewModel)
+        }
     }
 }
