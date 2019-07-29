@@ -13,7 +13,7 @@
 import UIKit
 
 protocol DetailsDisplayLogic: class {
-    func displaySomething(viewModel: Details.Something.ViewModel)
+//    func displaySomething(viewModel: Details.Something.ViewModel)
 }
 
 class DetailsViewController: UIViewController, DetailsDisplayLogic {
@@ -62,19 +62,19 @@ class DetailsViewController: UIViewController, DetailsDisplayLogic {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        doSomething()
+//        doSomething()
     }
 
     // MARK: Do something
 
     //@IBOutlet weak var nameTextField: UITextField!
 
-    func doSomething() {
-        let request = Details.Something.Request()
-        interactor?.doSomething(request: request)
-    }
-
-    func displaySomething(viewModel: Details.Something.ViewModel) {
-        //nameTextField.text = viewModel.name
-    }
+//    func doSomething() {
+//        let request = Details.Something.Request()
+//        interactor?.doSomething(request: request)
+//    }
+//
+//    func displaySomething(viewModel: Details.Something.ViewModel) {
+//        //nameTextField.text = viewModel.name
+//    }
 }

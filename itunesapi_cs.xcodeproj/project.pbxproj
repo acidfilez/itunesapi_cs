@@ -48,6 +48,13 @@
 		2CFED06E22EF8D7D00F8592E /* DetailsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CFED06D22EF8D7D00F8592E /* DetailsViewController.storyboard */; };
 		2CFED07022EF8DF600F8592E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CFED06F22EF8DF600F8592E /* Main.storyboard */; };
 		2CFED07222EF8E5F00F8592E /* AppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED07122EF8E5F00F8592E /* AppNavigationController.swift */; };
+		2CFED07822EF9EBD00F8592E /* DetailsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED07422EF9EBD00F8592E /* DetailsViewControllerTests.swift */; };
+		2CFED07922EF9EBD00F8592E /* DetailsInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED07522EF9EBD00F8592E /* DetailsInteractorTests.swift */; };
+		2CFED07A22EF9EBD00F8592E /* DetailsWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED07622EF9EBD00F8592E /* DetailsWorkerTests.swift */; };
+		2CFED07B22EF9EBD00F8592E /* DetailsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED07722EF9EBD00F8592E /* DetailsPresenterTests.swift */; };
+		2CFED07E22EF9EEA00F8592E /* DetailsBusinessLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED07D22EF9EEA00F8592E /* DetailsBusinessLogicSpy.swift */; };
+		2CFED08022EF9F3D00F8592E /* DetailsDisplayLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED07F22EF9F3D00F8592E /* DetailsDisplayLogicSpy.swift */; };
+		2CFED08222EF9F6100F8592E /* DetailsPresentationLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED08122EF9F6100F8592E /* DetailsPresentationLogicSpy.swift */; };
 		7E230F1A2470A933C764020B /* Pods_itunesapi_cs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 477FECDBB89B67DD359C9558 /* Pods_itunesapi_cs.framework */; };
 		A4FBF1F421177EF708DD085D /* Pods_itunesapi_csTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 621182D182E1E907CA4AB043 /* Pods_itunesapi_csTests.framework */; };
 /* End PBXBuildFile section */
@@ -108,6 +115,13 @@
 		2CFED06D22EF8D7D00F8592E /* DetailsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsViewController.storyboard; sourceTree = "<group>"; };
 		2CFED06F22EF8DF600F8592E /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2CFED07122EF8E5F00F8592E /* AppNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
+		2CFED07422EF9EBD00F8592E /* DetailsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewControllerTests.swift; sourceTree = "<group>"; };
+		2CFED07522EF9EBD00F8592E /* DetailsInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsInteractorTests.swift; sourceTree = "<group>"; };
+		2CFED07622EF9EBD00F8592E /* DetailsWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsWorkerTests.swift; sourceTree = "<group>"; };
+		2CFED07722EF9EBD00F8592E /* DetailsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPresenterTests.swift; sourceTree = "<group>"; };
+		2CFED07D22EF9EEA00F8592E /* DetailsBusinessLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsBusinessLogicSpy.swift; sourceTree = "<group>"; };
+		2CFED07F22EF9F3D00F8592E /* DetailsDisplayLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsDisplayLogicSpy.swift; sourceTree = "<group>"; };
+		2CFED08122EF9F6100F8592E /* DetailsPresentationLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPresentationLogicSpy.swift; sourceTree = "<group>"; };
 		36249240FD659A9FD438996A /* Pods-itunesapi_csTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itunesapi_csTests.debug.xcconfig"; path = "Target Support Files/Pods-itunesapi_csTests/Pods-itunesapi_csTests.debug.xcconfig"; sourceTree = "<group>"; };
 		46F90A867DA3291FB22213DB /* Pods-itunesapi_csTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itunesapi_csTests.release.xcconfig"; path = "Target Support Files/Pods-itunesapi_csTests/Pods-itunesapi_csTests.release.xcconfig"; sourceTree = "<group>"; };
 		477FECDBB89B67DD359C9558 /* Pods_itunesapi_cs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_itunesapi_cs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -257,6 +271,7 @@
 		2CFED02F22ED35AE00F8592E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				2CFED07322EF9EB000F8592E /* Details */,
 				2CFED03022ED35B200F8592E /* Search */,
 			);
 			path = Scenes;
@@ -347,6 +362,28 @@
 				2CFED06D22EF8D7D00F8592E /* DetailsViewController.storyboard */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		2CFED07322EF9EB000F8592E /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				2CFED07C22EF9EC400F8592E /* Spies */,
+				2CFED07422EF9EBD00F8592E /* DetailsViewControllerTests.swift */,
+				2CFED07522EF9EBD00F8592E /* DetailsInteractorTests.swift */,
+				2CFED07622EF9EBD00F8592E /* DetailsWorkerTests.swift */,
+				2CFED07722EF9EBD00F8592E /* DetailsPresenterTests.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		2CFED07C22EF9EC400F8592E /* Spies */ = {
+			isa = PBXGroup;
+			children = (
+				2CFED07D22EF9EEA00F8592E /* DetailsBusinessLogicSpy.swift */,
+				2CFED07F22EF9F3D00F8592E /* DetailsDisplayLogicSpy.swift */,
+				2CFED08122EF9F6100F8592E /* DetailsPresentationLogicSpy.swift */,
+			);
+			path = Spies;
 			sourceTree = "<group>";
 		};
 		9D63D54D6E94E8CB44E6E600 /* Pods */ = {
@@ -575,8 +612,15 @@
 				2CFED03A22ED35E700F8592E /* SearchPresenterTests.swift in Sources */,
 				2CFED03922ED35E700F8592E /* SearchWorkerTests.swift in Sources */,
 				2CFED03D22ED362300F8592E /* SearchBusinessLogicSpy.swift in Sources */,
+				2CFED08022EF9F3D00F8592E /* DetailsDisplayLogicSpy.swift in Sources */,
+				2CFED07E22EF9EEA00F8592E /* DetailsBusinessLogicSpy.swift in Sources */,
+				2CFED07A22EF9EBD00F8592E /* DetailsWorkerTests.swift in Sources */,
 				2CFED05E22EF837600F8592E /* SearchTableViewCellTests.swift in Sources */,
+				2CFED07922EF9EBD00F8592E /* DetailsInteractorTests.swift in Sources */,
 				2CFED04122ED372000F8592E /* SearchDisplayLogicSpy.swift in Sources */,
+				2CFED08222EF9F6100F8592E /* DetailsPresentationLogicSpy.swift in Sources */,
+				2CFED07B22EF9EBD00F8592E /* DetailsPresenterTests.swift in Sources */,
+				2CFED07822EF9EBD00F8592E /* DetailsViewControllerTests.swift in Sources */,
 				2CFED00322ED2E6100F8592E /* itunesapi_csTests.swift in Sources */,
 				2CFED03F22ED36C100F8592E /* SearchPresentationLogicSpy.swift in Sources */,
 				2CFED04722ED3BA800F8592E /* SearchWorkerSpy.swift in Sources */,
