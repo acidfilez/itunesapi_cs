@@ -106,4 +106,41 @@ class SearchInteractorTests: XCTestCase {
         XCTAssertTrue(workerSpy.fetchMediaCalled)
         XCTAssertTrue(presenterSpy.displayResultsCalled)
     }
+
+    func testNextPageShouldStartNewSearchOnNewSearchTerm() {
+        // Given
+        let currentMedias = [
+            Media(
+                wrapperType: "wrapper type",
+                artistName: "artist",
+                collectionId: 1,
+                collectionName: "collection name",
+                kind: "kind",
+                trackId: 1,
+                trackName: "track 1",
+                trackNumber: 1,
+                artwork: "artwork",
+                previewUrl: nil
+            )
+        ]
+
+        let initialRequest = Search.Request(searchTerm: "test album", page: 1)
+        let request = Search.Request(searchTerm: "test album 2", page: 2)
+
+        let workerSpy = SearchWorkerSpy()
+        let presenterSpy = SearchPresentationLogicSpy()
+
+        sut.currentMedias = currentMedias
+        sut.worker = workerSpy
+        sut.presenter = presenterSpy
+
+        // When
+        sut.startSearch(request: initialRequest)
+        sut.nextPage(request: request)
+
+        // Then
+        XCTAssertEqual(sut.lastTerm, "test album 2")
+        XCTAssertEqual(sut.currentMedias.count, 2)
+        XCTAssertEqual(sut.currentPage, 1)
+    }
 }

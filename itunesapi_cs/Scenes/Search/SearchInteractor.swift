@@ -57,9 +57,13 @@ class SearchInteractor: SearchBusinessLogic, SearchDataStore {
                 for: request.searchTerm,
                 page: request.page,
                 completion: { (success, medias) in
-                    let response = Search.Response(medias: medias)
-                    self.currentMedias = medias
-                    self.presenter?.displayResults(response: response)
+                    if success {
+                        let response = Search.Response(medias: medias)
+                        self.currentMedias = medias
+                        self.presenter?.displayResults(response: response)
+                    } else {
+                        self.startSearch(request: request, localResultsOnly: true)
+                    }
                 }
             )
         }
