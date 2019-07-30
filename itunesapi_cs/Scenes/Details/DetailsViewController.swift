@@ -103,7 +103,7 @@ class DetailsViewController: UIViewController, DetailsDisplayLogic {
     }
 
     func routeToMediaPlayer(viewModel: Details.MediaPlayerViewModel) {
-        
+        router?.routeToMediaPlayer()
     }
 }
 
@@ -136,9 +136,9 @@ extension DetailsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 
-//        let track = tracks[indexPath.row]
-//
-//        let request = Details.Request(media: track)
-//        interactor.didSelectMedia(request: request)
+        let track = tracks[indexPath.row]
+        let request = Details.Request(media: track)
+
+        interactor?.didSelectMedia(request: request)
     }
 }

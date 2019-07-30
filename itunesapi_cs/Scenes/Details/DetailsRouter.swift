@@ -13,7 +13,7 @@
 import UIKit
 
 @objc protocol DetailsRoutingLogic {
-    //func routeToSomewhere(segue: UIStoryboardSegue?)
+    func routeToMediaPlayer()
 }
 
 protocol DetailsDataPassing {
@@ -26,32 +26,25 @@ class DetailsRouter: NSObject, DetailsRoutingLogic, DetailsDataPassing {
 
     // MARK: Routing
 
-    //func routeToSomewhere(segue: UIStoryboardSegue?)
-    //{
-    //  if let segue = segue {
-    //    let destinationVC = segue.destination as! SomewhereViewController
-    //    var destinationDS = destinationVC.router!.dataStore!
-    //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-    //  } else {
-    //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    //    let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-    //    var destinationDS = destinationVC.router!.dataStore!
-    //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-    //    navigateToSomewhere(source: viewController!, destination: destinationVC)
-    //  }
-    //}
+    func routeToMediaPlayer() {
+        let storyboard = UIStoryboard(name: "MediaPlayerViewController", bundle: nil)
+        let destinationVC = storyboard.instantiateInitialViewController() as! MediaPlayerViewController
+        var destinationDS = destinationVC.router!.dataStore!
+        passDataToDetails(source: dataStore!, destination: &destinationDS)
+        navigateToDetails(source: viewController!, destination: destinationVC)
+    }
 
     // MARK: Navigation
 
-    //func navigateToSomewhere(source: DetailsViewController, destination: SomewhereViewController)
-    //{
-    //  source.show(destination, sender: nil)
-    //}
+    func navigateToDetails(source: DetailsViewController, destination: MediaPlayerViewController) {
+        destination.modalTransitionStyle = .crossDissolve
+        destination.modalPresentationStyle = .fullScreen
+        source.navigationController?.present(destination, animated: true, completion: nil)
+    }
 
     // MARK: Passing data
 
-    //func passDataToSomewhere(source: DetailsDataStore, destination: inout SomewhereDataStore)
-    //{
-    //  destination.name = source.name
-    //}
+    func passDataToDetails(source: DetailsDataStore, destination: inout MediaPlayerDataStore) {
+        destination.media = source.media
+    }
 }
