@@ -45,5 +45,13 @@ class MediaPlayerViewControllerTests: XCTestCase {
     }
 
     // MARK: Tests
-    
+    func testViewDidLoadShouldAddABlurBackground() {
+        // Given
+
+        // When
+        loadView()
+
+        // Then
+        XCTAssertFalse(sut.view.subviews.filter { $0 is UIVisualEffectView }.isEmpty)
+    }
 }
