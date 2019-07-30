@@ -15,7 +15,7 @@ import XCTest
 
 class MediaPlayerViewControllerTests: XCTestCase {
     // MARK: Subject under test
-    var sut: MediaPlayerViewController!
+    var sut: MediaPlayerViewController?
     var window: UIWindow!
 
     // MARK: Test lifecycle
@@ -40,7 +40,7 @@ class MediaPlayerViewControllerTests: XCTestCase {
     }
 
     func loadView() {
-        window.addSubview(sut.view)
+        window.addSubview(sut!.view)
         RunLoop.current.run(until: Date())
     }
 
@@ -52,6 +52,17 @@ class MediaPlayerViewControllerTests: XCTestCase {
         loadView()
 
         // Then
-        XCTAssertFalse(sut.view.subviews.filter { $0 is UIVisualEffectView }.isEmpty)
+        XCTAssertFalse(sut!.view.subviews.filter { $0 is UIVisualEffectView }.isEmpty)
+    }
+
+    func testCloseButtonShouldDismissMediaPlayer() {
+        // Given
+
+        // When
+        loadView()
+        sut?.closeMediaPlayer()
+
+        // Then
+        XCTAssertNil(sut)
     }
 }
