@@ -27,5 +27,6 @@ enum Details {
         let artistName: String
         let albumName: String
         var albumCoverImage: URL?
+        let tracks: [Media]
     }
 }

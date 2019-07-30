@@ -26,7 +26,8 @@ class DetailsPresenter: DetailsPresentationLogic {
         var viewModel = Details.ViewModel(
             artistName: response.album.albumInfo?.artistName ?? "",
             albumName: response.album.albumInfo?.collectionName ?? "",
-            albumCoverImage: nil
+            albumCoverImage: nil,
+            tracks: response.album.tracks
         )
 
         if let artworkUrl = response.album.albumInfo?.urlForArtwork {

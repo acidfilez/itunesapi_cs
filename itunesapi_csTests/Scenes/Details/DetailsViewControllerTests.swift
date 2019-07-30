@@ -77,7 +77,8 @@ class DetailsViewControllerTests: XCTestCase {
         let viewModel = Details.ViewModel(
             artistName: album.albumInfo?.artistName ?? "",
             albumName: album.albumInfo?.collectionName ?? "",
-            albumCoverImage: URL(string: "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/59/f2/cb/59f2cbb4-6800-2298-8de5-070caae3ec6a/00050086085873.rgb.jpg/100x100w.jpg")
+            albumCoverImage: URL(string: "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/59/f2/cb/59f2cbb4-6800-2298-8de5-070caae3ec6a/00050086085873.rgb.jpg/100x100w.jpg"),
+            tracks: []
         )
 
         // When
@@ -87,5 +88,48 @@ class DetailsViewControllerTests: XCTestCase {
         // Then
         XCTAssertEqual(sut.artistLabel.text, album.albumInfo?.artistName)
         XCTAssertEqual(sut.albumLabel.text, album.albumInfo?.collectionName)
+    }
+
+    func testSettingAlbumShouldUpdateTableViewRows() {
+        // Given
+        let album = [
+            Media(
+                wrapperType: "track",
+                artistName: "artist",
+                collectionId: 1,
+                collectionName: "collection name",
+                kind: "kind",
+                trackId: 1,
+                trackName: "track 1",
+                trackNumber: 1,
+                artwork: "artwork",
+                previewUrl: nil
+            ),
+            Media(
+                wrapperType: "collection", // collection is used for grabbing album data
+                artistName: "The artist name",
+                collectionId: 1,
+                collectionName: "The album name",
+                kind: "kind",
+                trackId: 1,
+                trackName: "track 1",
+                trackNumber: 1,
+                artwork: "artwork",
+                previewUrl: nil
+            )
+        ]
+        let viewModel = Details.ViewModel(
+            artistName: album.albumInfo?.artistName ?? "",
+            albumName: album.albumInfo?.collectionName ?? "",
+            albumCoverImage: URL(string: "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/59/f2/cb/59f2cbb4-6800-2298-8de5-070caae3ec6a/00050086085873.rgb.jpg/100x100w.jpg"),
+            tracks: album.tracks
+        )
+
+        // When
+        loadView()
+        sut.displayDataForAlbum(viewModel: viewModel)
+
+        // Then
+        XCTAssertEqual(sut.tableView(sut.tableView, numberOfRowsInSection: 0), album.tracks.count)
     }
 }

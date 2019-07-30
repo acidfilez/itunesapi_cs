@@ -27,7 +27,7 @@ class DetailsViewController: UIViewController, DetailsDisplayLogic {
     @IBOutlet weak var albumLabel: UILabel!
 
     var album: Album?
-    var tracks: [Media]?
+    var tracks: [Media] = []
     
     // MARK: Object lifecycle
 
@@ -96,6 +96,9 @@ class DetailsViewController: UIViewController, DetailsDisplayLogic {
         if let artworkUrl = viewModel.albumCoverImage {
             coverImageView.af_setImage(withURL: artworkUrl)
         }
+
+        tracks = viewModel.tracks
+        tableView.reloadData()
     }
 }
 
@@ -107,19 +110,15 @@ extension DetailsViewController: UITableViewDataSource {
     // MARK: Data source
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let tracks = tracks else {
-            return 0
-        }
-
         return tracks.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: DetailsViewController.cellIdentifier, for: indexPath) as! DetailsTableViewCell
-        let item = tracks?[indexPath.row]
+        let item = tracks[indexPath.row]
 
-        cell.trackTitle = item?.trackName
-        cell.trackNumber = item?.trackNumber
+        cell.trackTitle = item.trackName
+        cell.trackNumber = item.trackNumber
 
         return cell
     }
@@ -132,10 +131,8 @@ extension DetailsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 
-        guard let track = tracks?[indexPath.row] else {
-            return
-        }
-
+//        let track = tracks[indexPath.row]
+//
 //        let request = Details.Request(media: track)
 //        interactor.didSelectMedia(request: request)
     }
