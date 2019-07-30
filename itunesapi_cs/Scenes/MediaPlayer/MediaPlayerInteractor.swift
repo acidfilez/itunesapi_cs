@@ -13,6 +13,7 @@
 import UIKit
 
 protocol MediaPlayerBusinessLogic {
+    func loaded()
     func playMedia(request: MediaPlayer.PlayRequest)
 }
 
@@ -24,6 +25,10 @@ class MediaPlayerInteractor: MediaPlayerBusinessLogic, MediaPlayerDataStore {
     var presenter: MediaPlayerPresentationLogic?
     var worker: MediaPlayerWorker?
     var media: Media?
+
+    func loaded() {
+        
+    }
 
     func playMedia(request: MediaPlayer.PlayRequest) {
         let response = MediaPlayer.PlayResponse(media: request.media)

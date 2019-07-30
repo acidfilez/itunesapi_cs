@@ -15,5 +15,10 @@ class MediaPlayerBusinessLogicSpy: MediaPlayerBusinessLogic {
     func playMedia(request: MediaPlayer.PlayRequest) {
         playMediaCalled = true
     }
-    
+
+    var loadedCalled = false
+
+    func loaded() {
+        loadedCalled = true
+    }
 }

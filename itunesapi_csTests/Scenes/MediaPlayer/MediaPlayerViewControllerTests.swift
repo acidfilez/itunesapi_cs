@@ -45,6 +45,18 @@ class MediaPlayerViewControllerTests: XCTestCase {
     }
 
     // MARK: Tests
+    func testViewDidLoadShouldCallInteractorLoaded() {
+        // Given
+        let interactorSpy = MediaPlayerBusinessLogicSpy()
+        sut?.interactor = interactorSpy
+
+        // When
+        loadView()
+
+        // Then
+        XCTAssertTrue(interactorSpy.loadedCalled)
+    }
+
     func testViewDidLoadShouldAddABlurBackground() {
         // Given
 

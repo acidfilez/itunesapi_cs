@@ -64,6 +64,7 @@ class MediaPlayerViewController: UIViewController, MediaPlayerDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBlurEffect()
+        interactor?.loaded()
     }
 
     // MARK: Actions
