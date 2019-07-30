@@ -14,6 +14,7 @@ import UIKit
 
 protocol DetailsBusinessLogic {
     func fetchAlbumDetails(request: Details.Request)
+    func didSelectMedia(request: Details.Request)
 }
 
 protocol DetailsDataStore {
@@ -40,5 +41,10 @@ class DetailsInteractor: DetailsBusinessLogic, DetailsDataStore {
                 self.presenter?.presentAlbumDetailsErrorMessage()
             }
         })
+    }
+
+    func didSelectMedia(request: Details.Request) {
+        let response = Details.MediaPlayerResponse(media: request.media)
+        presenter?.presentMediaPlayer(response: response)
     }
 }

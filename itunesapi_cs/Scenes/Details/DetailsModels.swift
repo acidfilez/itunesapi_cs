@@ -23,6 +23,10 @@ enum Details {
         let album: Album
     }
 
+    struct MediaPlayerResponse {
+        let media: Media
+    }
+
     struct ViewModel {
         let artistName: String
         let albumName: String

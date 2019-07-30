@@ -16,5 +16,10 @@ class DetailsBusinessLogicSpy: DetailsBusinessLogic {
     func fetchAlbumDetails(request: Details.Request) {
         fetchAlbumDetailsCalled = true
     }
-    
+
+    var didSelectMediaCalled = false
+
+    func didSelectMedia(request: Details.Request) {
+        didSelectMediaCalled = true
+    }
 }

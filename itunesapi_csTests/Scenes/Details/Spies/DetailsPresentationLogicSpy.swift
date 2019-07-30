@@ -22,4 +22,10 @@ class DetailsPresentationLogicSpy: DetailsPresentationLogic {
     func presentAlbumDetailsErrorMessage() {
         presentAlbumDetailsErrorMessageCalled = true
     }
+
+    var presentMediaPlayerCalled = false
+
+    func presentMediaPlayer(response: Details.MediaPlayerResponse) {
+        presentMediaPlayerCalled = true
+    }
 }
