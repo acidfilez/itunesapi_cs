@@ -23,7 +23,17 @@ class DetailsPresenter: DetailsPresentationLogic {
     // MARK: Do something
 
     func presentAlbumDetails(response: Details.Response) {
-        
+        var viewModel = Details.ViewModel(
+            artistName: response.album.albumInfo?.artistName ?? "",
+            albumName: response.album.albumInfo?.collectionName ?? "",
+            albumCoverImage: nil
+        )
+
+        if let artworkUrl = response.album.albumInfo?.urlForArtwork {
+            viewModel.albumCoverImage = artworkUrl
+        }
+
+        viewController?.displayDataForAlbum(viewModel: viewModel)
     }
 
     func presentAlbumDetailsErrorMessage() {

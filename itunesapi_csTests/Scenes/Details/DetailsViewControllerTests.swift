@@ -76,7 +76,8 @@ class DetailsViewControllerTests: XCTestCase {
         ]
         let viewModel = Details.ViewModel(
             artistName: album.albumInfo?.artistName ?? "",
-            albumName: album.albumInfo?.collectionName ?? ""
+            albumName: album.albumInfo?.collectionName ?? "",
+            albumCoverImage: URL(string: "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/59/f2/cb/59f2cbb4-6800-2298-8de5-070caae3ec6a/00050086085873.rgb.jpg/100x100w.jpg")
         )
 
         // When

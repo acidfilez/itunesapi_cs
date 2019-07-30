@@ -36,17 +36,31 @@ class DetailsPresenterTests: XCTestCase {
     }
 
     // MARK: Tests
+    func testPresentAlbumDetails() {
+        // Given
+        let album = [
+            Media(
+                wrapperType: "collection", // collection is used for grabbing album data
+                artistName: "The artist name",
+                collectionId: 1,
+                collectionName: "The album name",
+                kind: "kind",
+                trackId: 1,
+                trackName: "track 1",
+                trackNumber: 1,
+                artwork: "artwork",
+                previewUrl: nil
+            )
+        ]
+        let viewControllerSpy = DetailsDisplayLogicSpy()
+        sut.viewController = viewControllerSpy
+        let response = Details.Response(album: album)
 
-//    func testPresentSomething() {
-//        // Given
-//        let spy = DetailsDisplayLogicSpy()
-//        sut.viewController = spy
-//        let response = Details.Something.Response()
-//
-//        // When
-//        sut.presentSomething(response: response)
-//
-//        // Then
-//        XCTAssertTrue(spy.displaySomethingCalled, "presentSomething(response:) should ask the view controller to display the result")
-//    }
+        // When
+        sut.presentAlbumDetails(response: response)
+
+        // Then
+        XCTAssertTrue(viewControllerSpy.displayDataForAlbumCalled)
+    }
+    
 }

@@ -10,6 +10,7 @@
 //  see http://clean-swift.com
 //
 
+import AlamofireImage
 import UIKit
 
 protocol DetailsDisplayLogic: class {
@@ -85,8 +86,16 @@ class DetailsViewController: UIViewController, DetailsDisplayLogic {
 
     // MARK: Use cases
     func displayDataForAlbum(viewModel: Details.ViewModel) {
+        title = viewModel.albumName
         artistLabel.text = viewModel.artistName
         albumLabel.text = viewModel.albumName
+
+        coverImageView.af_cancelImageRequest()
+        coverImageView.image = nil
+
+        if let artworkUrl = viewModel.albumCoverImage {
+            coverImageView.af_setImage(withURL: artworkUrl)
+        }
     }
 }
 
