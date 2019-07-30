@@ -60,7 +60,7 @@ class SearchInteractor: SearchBusinessLogic, SearchDataStore {
 
             worker?.fetchMedia(
                 for: request.searchTerm,
-                page: request.page,
+                page: currentPage,
                 completion: { (success, medias) in
                     self.presenter?.dismissLoadingIndicator()
                     
@@ -90,7 +90,7 @@ class SearchInteractor: SearchBusinessLogic, SearchDataStore {
 
         worker?.fetchMedia(
             for: request.searchTerm,
-            page: request.page,
+            page: currentPage,
             completion: { (success, medias) in
                 let filtered = medias.filter { $0.collectionId != nil && $0.kind != nil && $0.kind! == "song" }
                 self.currentMedias.append(contentsOf: filtered)

@@ -10,6 +10,7 @@
 //  see http://clean-swift.com
 //
 
+import ICSPullToRefresh
 import UIKit
 
 protocol SearchDisplayLogic: class {
@@ -81,11 +82,30 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
         tableView.delegate = self
 
         setupSearchController()
+        setupInfiniteScrolling()
+    }
+
+    func setupInfiniteScrolling() {
+        tableView.addInfiniteScrollingWithHandler {
+            guard let term = self.searchController.searchBar.text?.lowercased() else {
+                self.tableView.infiniteScrollingView?.stopAnimating()
+                self.interactor?.startSearch(request: Search.Request(searchTerm: "", page: 1))
+                return
+            }
+
+            let request = Search.Request(
+                searchTerm: term,
+                page: 0 // no importa, nextPage calcula sola la siguiente página
+            )
+
+            self.interactor?.nextPage(request: request)
+        }
     }
 
     func displayResults(viewModel: Search.ViewModel) {
         medias = viewModel.medias
         tableView.reloadData()
+        tableView.infiniteScrollingView?.stopAnimating()
 
         if medias.isEmpty {
             self.tableView.beginUpdates()
@@ -108,6 +128,8 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
         view.bringSubviewToFront(message)
 
         noResultsLabel = message
+
+        tableView.infiniteScrollingView?.stopAnimating()
     }
 
     func hideNoResults() {
