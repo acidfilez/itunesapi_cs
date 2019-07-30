@@ -15,4 +15,10 @@ class MediaPlayerDisplayLogicSpy: MediaPlayerDisplayLogic {
     func closeMediaPlayer(viewModel: MediaPlayer.CloseViewModel?) {
         closeMediaPlayerCalled = true
     }
+
+    var showPlaybackStatusCalled = false
+
+    func showPlaybackStatus(viewModel: MediaPlayer.PlayViewModel) {
+        showPlaybackStatusCalled = true
+    }
 }

@@ -13,6 +13,7 @@
 import UIKit
 
 protocol MediaPlayerDisplayLogic: class {
+    func showPlaybackStatus(viewModel: MediaPlayer.PlayViewModel)
     func closeMediaPlayer(viewModel: MediaPlayer.CloseViewModel?)
 }
 
@@ -84,5 +85,9 @@ class MediaPlayerViewController: UIViewController, MediaPlayerDisplayLogic {
 
     func closeMediaPlayer(viewModel: MediaPlayer.CloseViewModel?) {
         router?.dismissPopup(animated: true)
+    }
+
+    func showPlaybackStatus(viewModel: MediaPlayer.PlayViewModel) {
+        
     }
 }

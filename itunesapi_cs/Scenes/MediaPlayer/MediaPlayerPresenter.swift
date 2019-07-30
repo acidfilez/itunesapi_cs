@@ -21,6 +21,7 @@ class MediaPlayerPresenter: MediaPlayerPresentationLogic {
 
     // MARK: Do something
     func presentPlaybackStatus(response: MediaPlayer.PlayResponse) {
-        
+        let viewModel = MediaPlayer.PlayViewModel()
+        viewController?.showPlaybackStatus(viewModel: viewModel)
     }
 }
