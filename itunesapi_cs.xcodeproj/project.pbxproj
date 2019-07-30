@@ -57,6 +57,7 @@
 		2CFED08222EF9F6100F8592E /* DetailsPresentationLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED08122EF9F6100F8592E /* DetailsPresentationLogicSpy.swift */; };
 		2CFED08422EFA60D00F8592E /* DetailsWorkerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED08322EFA60D00F8592E /* DetailsWorkerSpy.swift */; };
 		2CFED08A22EFD00B00F8592E /* DetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED08922EFD00B00F8592E /* DetailsTableViewCell.swift */; };
+		2CFED08D22EFD49A00F8592E /* DetailsTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED08C22EFD49A00F8592E /* DetailsTableViewCellTests.swift */; };
 		7E230F1A2470A933C764020B /* Pods_itunesapi_cs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 477FECDBB89B67DD359C9558 /* Pods_itunesapi_cs.framework */; };
 		A4FBF1F421177EF708DD085D /* Pods_itunesapi_csTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 621182D182E1E907CA4AB043 /* Pods_itunesapi_csTests.framework */; };
 /* End PBXBuildFile section */
@@ -127,6 +128,7 @@
 		2CFED08322EFA60D00F8592E /* DetailsWorkerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsWorkerSpy.swift; sourceTree = "<group>"; };
 		2CFED08522EFCF0500F8592E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		2CFED08922EFD00B00F8592E /* DetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewCell.swift; sourceTree = "<group>"; };
+		2CFED08C22EFD49A00F8592E /* DetailsTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewCellTests.swift; sourceTree = "<group>"; };
 		36249240FD659A9FD438996A /* Pods-itunesapi_csTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itunesapi_csTests.debug.xcconfig"; path = "Target Support Files/Pods-itunesapi_csTests/Pods-itunesapi_csTests.debug.xcconfig"; sourceTree = "<group>"; };
 		46F90A867DA3291FB22213DB /* Pods-itunesapi_csTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itunesapi_csTests.release.xcconfig"; path = "Target Support Files/Pods-itunesapi_csTests/Pods-itunesapi_csTests.release.xcconfig"; sourceTree = "<group>"; };
 		477FECDBB89B67DD359C9558 /* Pods_itunesapi_cs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_itunesapi_cs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -373,6 +375,7 @@
 		2CFED07322EF9EB000F8592E /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				2CFED08B22EFD48900F8592E /* Views */,
 				2CFED07C22EF9EC400F8592E /* Spies */,
 				2CFED07422EF9EBD00F8592E /* DetailsViewControllerTests.swift */,
 				2CFED07522EF9EBD00F8592E /* DetailsInteractorTests.swift */,
@@ -397,6 +400,14 @@
 			isa = PBXGroup;
 			children = (
 				2CFED08922EFD00B00F8592E /* DetailsTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2CFED08B22EFD48900F8592E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2CFED08C22EFD49A00F8592E /* DetailsTableViewCellTests.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -630,6 +641,7 @@
 				2CFED03D22ED362300F8592E /* SearchBusinessLogicSpy.swift in Sources */,
 				2CFED08022EF9F3D00F8592E /* DetailsDisplayLogicSpy.swift in Sources */,
 				2CFED07E22EF9EEA00F8592E /* DetailsBusinessLogicSpy.swift in Sources */,
+				2CFED08D22EFD49A00F8592E /* DetailsTableViewCellTests.swift in Sources */,
 				2CFED07A22EF9EBD00F8592E /* DetailsWorkerTests.swift in Sources */,
 				2CFED05E22EF837600F8592E /* SearchTableViewCellTests.swift in Sources */,
 				2CFED07922EF9EBD00F8592E /* DetailsInteractorTests.swift in Sources */,
