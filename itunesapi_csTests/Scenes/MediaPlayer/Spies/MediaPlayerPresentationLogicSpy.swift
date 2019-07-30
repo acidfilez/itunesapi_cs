@@ -15,4 +15,11 @@ class MediaPlayerPresentationLogicSpy: MediaPlayerPresentationLogic {
     func presentPlaybackStatus(response: MediaPlayer.PlayResponse) {
         presentPlaybackStatusCalled = true
     }
+
+    var dismissMediaPlayerCalled = false
+
+    func dismissMediaPlayer() {
+        dismissMediaPlayerCalled = true
+    }
+
 }

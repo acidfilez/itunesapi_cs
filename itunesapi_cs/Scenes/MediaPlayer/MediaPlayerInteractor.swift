@@ -32,7 +32,9 @@ class MediaPlayerInteractor: NSObject, MediaPlayerBusinessLogic, MediaPlayerData
     var player: ORGMEngine = ORGMEngine()
 
     func loaded() {
-        playMedia(request: MediaPlayer.PlayRequest(media: media!))
+        if let media = media {
+            playMedia(request: MediaPlayer.PlayRequest(media: media))
+        }
     }
 
     func playMedia(request: MediaPlayer.PlayRequest) {

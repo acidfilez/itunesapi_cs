@@ -16,9 +16,16 @@ class MediaPlayerBusinessLogicSpy: MediaPlayerBusinessLogic {
         playMediaCalled = true
     }
 
+    var stopMediaCalled = false
+
+    func stopMedia() {
+        stopMediaCalled = true
+    }
+
     var loadedCalled = false
 
     func loaded() {
         loadedCalled = true
     }
+
 }
