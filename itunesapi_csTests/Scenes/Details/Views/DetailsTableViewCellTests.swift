@@ -26,7 +26,7 @@ class DetailsTableViewCellTests: XCTestCase {
 
     // MARK: - Setup
     private func setupView() {
-        sut = DetailsTableViewCell(frame: .zero)
+        sut = DetailsTableViewCell()
 
         let numberLabel = UILabel()
         numberLabel.text = nil
@@ -52,6 +52,37 @@ class DetailsTableViewCellTests: XCTestCase {
         XCTAssertEqual(sut.trackNumberLabel.text, expectedResult)
     }
 
-    
+    func testSettingNilTrackNumberUsesDoubleZeroValue() {
+        // Given
+        let expectedResult = "00"
+
+        // When
+        sut.trackNumber = nil
+
+        // Then
+        XCTAssertEqual(sut.trackNumberLabel.text, expectedResult)
+    }
+
+    func testSettingTrackNameDisplaysTheSameNameInCell() {
+        // Given
+        let trackName = "Título de la pista"
+
+        // When
+        sut.trackTitle = trackName
+
+        // Then
+        XCTAssertEqual(sut.trackTitleLabel.text, trackName)
+    }
+
+    func testSettingNilTrackNameShowsNoTitleMessage() {
+        // Given
+        let emptyTrackName = "No se pudo obtener el título de esta canción."
+
+        // When
+        sut.trackTitle = nil
+
+        // Then
+        XCTAssertEqual(sut.trackTitleLabel.text, emptyTrackName)
+    }
 
 }
