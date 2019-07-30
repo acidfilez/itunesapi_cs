@@ -46,27 +46,41 @@ class DetailsViewControllerTests: XCTestCase {
 
     // MARK: Tests
 
-//    func testShouldDoSomethingWhenViewIsLoaded() {
-//        // Given
-//        let spy = DetailsBusinessLogicSpy()
-//        sut.interactor = spy
-//
-//        // When
-//        loadView()
-//
-//        // Then
-//        XCTAssertTrue(spy.doSomethingCalled, "viewDidLoad() should ask the interactor to do something")
-//    }
-//
-//    func testDisplaySomething() {
-//        // Given
-//        let viewModel = Details.Something.ViewModel()
-//
-//        // When
-//        loadView()
-//        sut.displaySomething(viewModel: viewModel)
-//
-//        // Then
-//        //XCTAssertEqual(sut.nameTextField.text, "", "displaySomething(viewModel:) should update the name text field")
-//    }
+    func testSettingAlbumShouldSetArtistAndAlbumNames() {
+        // Given
+        let album = [
+            Media(
+                wrapperType: "wrapper type",
+                artistName: "artist",
+                collectionId: 1,
+                collectionName: "collection name",
+                kind: "kind",
+                trackId: 1,
+                trackName: "track 1",
+                trackNumber: 1,
+                artwork: "artwork",
+                previewUrl: nil
+            ),
+            Media(
+                wrapperType: "wrapper type",
+                artistName: "artist",
+                collectionId: 1,
+                collectionName: "collection name",
+                kind: "kind",
+                trackId: 1,
+                trackName: "track 1",
+                trackNumber: 1,
+                artwork: "artwork",
+                previewUrl: nil
+            )
+        ]
+        let viewController =
+
+        // When
+        sut.album = album
+
+        // Then
+        XCTAssertEqual(sut.artistLabel.text, album.albumInfo?.artistName)
+        XCTAssertEqual(sut.albumLabel.text, album.albumInfo?.collectionName)
+    }
 }

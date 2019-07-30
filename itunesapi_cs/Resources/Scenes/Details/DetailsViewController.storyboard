@@ -17,9 +17,117 @@
                     <view key="view" contentMode="scaleToFill" id="Bx3-fb-vWH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="78" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yTO-d5-adM">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="F3W-zy-kp3" userLabel="Top View">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="116"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lfz-Pz-Zyn">
+                                            <rect key="frame" x="8" y="8" width="100" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="TiU-rN-vZ8"/>
+                                                <constraint firstAttribute="width" secondItem="Lfz-Pz-Zyn" secondAttribute="height" multiplier="1:1" id="vt6-xr-Ylo"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="4"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" text="Nombre de la banda" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gom-wL-eHk">
+                                            <rect key="frame" x="116" y="8" width="251" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="36" id="JNH-i2-jdA"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="13"/>
+                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre del álbum" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MVq-ae-IQK">
+                                            <rect key="frame" x="116" y="26" width="251" height="20.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" id="epd-lD-hBt"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="15"/>
+                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Gom-wL-eHk" firstAttribute="leading" secondItem="Lfz-Pz-Zyn" secondAttribute="trailing" constant="8" id="Gon-UH-9iP"/>
+                                        <constraint firstItem="Lfz-Pz-Zyn" firstAttribute="leading" secondItem="F3W-zy-kp3" secondAttribute="leading" constant="8" id="Mz8-Ie-b5E"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="MVq-ae-IQK" secondAttribute="bottom" constant="8" id="T1g-lf-BwF"/>
+                                        <constraint firstAttribute="trailing" secondItem="MVq-ae-IQK" secondAttribute="trailing" constant="8" id="T9r-Jr-bBB"/>
+                                        <constraint firstItem="MVq-ae-IQK" firstAttribute="leading" secondItem="Lfz-Pz-Zyn" secondAttribute="trailing" constant="8" id="a6b-Yk-0tG"/>
+                                        <constraint firstItem="MVq-ae-IQK" firstAttribute="top" secondItem="Gom-wL-eHk" secondAttribute="bottom" id="aVj-Af-BwM"/>
+                                        <constraint firstAttribute="trailing" secondItem="Gom-wL-eHk" secondAttribute="trailing" constant="8" id="kC4-Ba-XNk"/>
+                                        <constraint firstItem="Gom-wL-eHk" firstAttribute="top" secondItem="F3W-zy-kp3" secondAttribute="top" constant="8" id="ubp-p3-4HQ"/>
+                                        <constraint firstItem="Lfz-Pz-Zyn" firstAttribute="top" secondItem="F3W-zy-kp3" secondAttribute="top" constant="8" id="urZ-pf-top"/>
+                                    </constraints>
+                                </view>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="MeV-75-8eK" userLabel="Bottom View">
+                                    <rect key="frame" x="0.0" y="222" width="414" height="0.0"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailsTableViewCell" id="ejf-vR-P75" customClass="DetailsTableViewCell" customModule="itunesapi" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="144" width="414" height="78"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ejf-vR-P75" id="xwy-95-hCc">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="77.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="##" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adP-6A-iGd">
+                                                    <rect key="frame" x="8" y="8" width="30" height="61.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="NrM-YE-a7g"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="15"/>
+                                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Título de la canción" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fDs-mO-hxH">
+                                                    <rect key="frame" x="38" y="8" width="329" height="61.5"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="15"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="fDs-mO-hxH" secondAttribute="trailing" constant="8" id="3lM-TV-Bpf"/>
+                                                <constraint firstItem="adP-6A-iGd" firstAttribute="leading" secondItem="xwy-95-hCc" secondAttribute="leading" constant="8" id="GHY-52-ncb"/>
+                                                <constraint firstAttribute="bottom" secondItem="fDs-mO-hxH" secondAttribute="bottom" constant="8" id="HbF-XA-7ls"/>
+                                                <constraint firstItem="adP-6A-iGd" firstAttribute="top" secondItem="xwy-95-hCc" secondAttribute="top" constant="8" id="S7O-BG-9nV"/>
+                                                <constraint firstItem="fDs-mO-hxH" firstAttribute="leading" secondItem="adP-6A-iGd" secondAttribute="trailing" id="SYX-il-2TQ"/>
+                                                <constraint firstAttribute="bottom" secondItem="adP-6A-iGd" secondAttribute="bottom" constant="8" id="abT-ZU-Wie"/>
+                                                <constraint firstItem="fDs-mO-hxH" firstAttribute="top" secondItem="xwy-95-hCc" secondAttribute="top" constant="8" id="fTX-1H-gGk"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="trackNumberLabel" destination="adP-6A-iGd" id="xAp-2x-GdE"/>
+                                            <outlet property="trackTitleLabel" destination="fDs-mO-hxH" id="riX-ZR-C7k"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yTO-d5-adM" firstAttribute="leading" secondItem="67h-6W-jZv" secondAttribute="leading" id="6Ft-RN-B7l"/>
+                            <constraint firstItem="yTO-d5-adM" firstAttribute="top" secondItem="67h-6W-jZv" secondAttribute="top" id="DEv-8n-IoI"/>
+                            <constraint firstItem="67h-6W-jZv" firstAttribute="trailing" secondItem="yTO-d5-adM" secondAttribute="trailing" id="jfq-gx-WUz"/>
+                            <constraint firstItem="67h-6W-jZv" firstAttribute="bottom" secondItem="yTO-d5-adM" secondAttribute="bottom" id="oBe-Fx-Ij3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="67h-6W-jZv"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="yTO-d5-adM" id="hwi-0d-wHx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dsb-9a-No7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

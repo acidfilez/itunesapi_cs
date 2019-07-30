@@ -20,6 +20,11 @@ class DetailsViewController: UIViewController, DetailsDisplayLogic {
     var interactor: DetailsBusinessLogic?
     var router: (NSObjectProtocol & DetailsRoutingLogic & DetailsDataPassing)?
 
+    @IBOutlet weak var tableView: UITableView!
+
+    var album: Album?
+    var tracks: [Media]?
+    
     // MARK: Object lifecycle
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -63,6 +68,9 @@ class DetailsViewController: UIViewController, DetailsDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+//        tableView.delegate = self
+        tableView.dataSource = self
+
         if
             let dataStore = interactor as? DetailsDataStore,
             let media = dataStore.media
@@ -71,17 +79,30 @@ class DetailsViewController: UIViewController, DetailsDisplayLogic {
             interactor?.fetchAlbumDetails(request: request)
         }
     }
+}
 
-    // MARK: Do something
+// MARK: - UITableView
 
-    //@IBOutlet weak var nameTextField: UITextField!
+extension DetailsViewController: UITableViewDataSource {
+    static let cellIdentifier = "DetailsTableViewCell"
 
-//    func doSomething() {
-//        let request = Details.Something.Request()
-//        interactor?.doSomething(request: request)
-//    }
-//
-//    func displaySomething(viewModel: Details.Something.ViewModel) {
-//        //nameTextField.text = viewModel.name
-//    }
+    // MARK: Data source
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let tracks = tracks else {
+            return 0
+        }
+
+        return tracks.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: DetailsViewController.cellIdentifier, for: indexPath) as! DetailsTableViewCell
+        let item = tracks?[indexPath.row]
+
+        cell.trackTitle = item?.trackName
+        cell.trackNumber = item?.trackNumber
+
+        return cell
+    }
 }
