@@ -13,7 +13,7 @@
 import UIKit
 
 @objc protocol MediaPlayerRoutingLogic {
-    //func routeToSomewhere(segue: UIStoryboardSegue?)
+    func dismissPopup(animated: Bool)
 }
 
 protocol MediaPlayerDataPassing {
@@ -23,4 +23,8 @@ protocol MediaPlayerDataPassing {
 class MediaPlayerRouter: NSObject, MediaPlayerRoutingLogic, MediaPlayerDataPassing {
     weak var viewController: MediaPlayerViewController?
     var dataStore: MediaPlayerDataStore?
+    
+    func dismissPopup(animated: Bool) {
+        viewController?.dismiss(animated: animated, completion: nil)
+    }
 }

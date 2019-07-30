@@ -13,6 +13,7 @@
 import UIKit
 
 protocol MediaPlayerDisplayLogic: class {
+    func closeMediaPlayer(viewModel: MediaPlayer.CloseViewModel?)
 }
 
 class MediaPlayerViewController: UIViewController, MediaPlayerDisplayLogic {
@@ -64,6 +65,12 @@ class MediaPlayerViewController: UIViewController, MediaPlayerDisplayLogic {
         setupBlurEffect()
     }
 
+    // MARK: Actions
+    
+    @IBAction func closeButtonTapped(_ sender: UIButton) {
+        closeMediaPlayer(viewModel: nil)
+    }
+    
     // MARK: Layout
     func setupBlurEffect() {
         // Background blur yeeey
@@ -73,5 +80,9 @@ class MediaPlayerViewController: UIViewController, MediaPlayerDisplayLogic {
 
         view.addSubview(blurEffectView)
         view.sendSubviewToBack(blurEffectView)
+    }
+
+    func closeMediaPlayer(viewModel: MediaPlayer.CloseViewModel?) {
+        router?.dismissPopup(animated: true)
     }
 }

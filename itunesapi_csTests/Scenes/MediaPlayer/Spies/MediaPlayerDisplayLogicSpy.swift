@@ -9,4 +9,10 @@
 @testable import itunesapi_cs
 
 class MediaPlayerDisplayLogicSpy: MediaPlayerDisplayLogic {
+
+    var closeMediaPlayerCalled = false
+
+    func closeMediaPlayer(viewModel: MediaPlayer.CloseViewModel?) {
+        closeMediaPlayerCalled = true
+    }
 }

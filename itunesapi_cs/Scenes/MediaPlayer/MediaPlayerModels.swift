@@ -14,4 +14,8 @@ import UIKit
 
 enum MediaPlayer {
     // MARK: Use cases
+
+    struct CloseViewModel {
+        let animated: Bool
+    }
 }

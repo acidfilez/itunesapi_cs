@@ -72,6 +72,7 @@
 		2CFED0A922EFE92E00F8592E /* MediaPlayerBusinessLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED0A822EFE92E00F8592E /* MediaPlayerBusinessLogicSpy.swift */; };
 		2CFED0AB22EFE93800F8592E /* MediaPlayerDisplayLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED0AA22EFE93800F8592E /* MediaPlayerDisplayLogicSpy.swift */; };
 		2CFED0AD22EFE94400F8592E /* MediaPlayerPresentationLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED0AC22EFE94400F8592E /* MediaPlayerPresentationLogicSpy.swift */; };
+		2CFED0B122EFEE9900F8592E /* MediaPlayerRouterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED0B022EFEE9900F8592E /* MediaPlayerRouterSpy.swift */; };
 		7E230F1A2470A933C764020B /* Pods_itunesapi_cs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 477FECDBB89B67DD359C9558 /* Pods_itunesapi_cs.framework */; };
 		A4FBF1F421177EF708DD085D /* Pods_itunesapi_csTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 621182D182E1E907CA4AB043 /* Pods_itunesapi_csTests.framework */; };
 /* End PBXBuildFile section */
@@ -157,6 +158,7 @@
 		2CFED0A822EFE92E00F8592E /* MediaPlayerBusinessLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayerBusinessLogicSpy.swift; sourceTree = "<group>"; };
 		2CFED0AA22EFE93800F8592E /* MediaPlayerDisplayLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayerDisplayLogicSpy.swift; sourceTree = "<group>"; };
 		2CFED0AC22EFE94400F8592E /* MediaPlayerPresentationLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayerPresentationLogicSpy.swift; sourceTree = "<group>"; };
+		2CFED0B022EFEE9900F8592E /* MediaPlayerRouterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayerRouterSpy.swift; sourceTree = "<group>"; };
 		36249240FD659A9FD438996A /* Pods-itunesapi_csTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itunesapi_csTests.debug.xcconfig"; path = "Target Support Files/Pods-itunesapi_csTests/Pods-itunesapi_csTests.debug.xcconfig"; sourceTree = "<group>"; };
 		46F90A867DA3291FB22213DB /* Pods-itunesapi_csTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itunesapi_csTests.release.xcconfig"; path = "Target Support Files/Pods-itunesapi_csTests/Pods-itunesapi_csTests.release.xcconfig"; sourceTree = "<group>"; };
 		477FECDBB89B67DD359C9558 /* Pods_itunesapi_cs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_itunesapi_cs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -482,6 +484,7 @@
 				2CFED0A822EFE92E00F8592E /* MediaPlayerBusinessLogicSpy.swift */,
 				2CFED0AA22EFE93800F8592E /* MediaPlayerDisplayLogicSpy.swift */,
 				2CFED0AC22EFE94400F8592E /* MediaPlayerPresentationLogicSpy.swift */,
+				2CFED0B022EFEE9900F8592E /* MediaPlayerRouterSpy.swift */,
 			);
 			path = Spies;
 			sourceTree = "<group>";
@@ -743,6 +746,7 @@
 				2CFED03822ED35E700F8592E /* SearchInteractorTests.swift in Sources */,
 				2CFED0A422EFE91900F8592E /* MediaPlayerInteractorTests.swift in Sources */,
 				2CFED04E22EF6DB100F8592E /* SearchCoreDataWorkerSpy.swift in Sources */,
+				2CFED0B122EFEE9900F8592E /* MediaPlayerRouterSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

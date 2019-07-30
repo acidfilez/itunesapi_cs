@@ -57,12 +57,15 @@ class MediaPlayerViewControllerTests: XCTestCase {
 
     func testCloseButtonShouldDismissMediaPlayer() {
         // Given
+        let viewModel = MediaPlayer.CloseViewModel(animated: false)
+        let routerSpy = MediaPlayerRouterSpy()
+        sut?.router = routerSpy
 
         // When
         loadView()
-        sut?.closeMediaPlayer()
+        sut?.closeMediaPlayer(viewModel: viewModel)
 
         // Then
-        XCTAssertNil(sut)
+        XCTAssertTrue(routerSpy.dismissPopupCalled)
     }
 }

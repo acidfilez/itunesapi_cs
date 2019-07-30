@@ -29,6 +29,9 @@
                                         </constraints>
                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="mediaplayer_close"/>
+                                        <connections>
+                                            <action selector="closeButtonTapped:" destination="I4f-6o-v72" eventType="touchUpInside" id="mBG-yL-C4g"/>
+                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rer-Vw-OIn">
                                         <rect key="frame" x="8" y="8" width="100" height="100"/>
