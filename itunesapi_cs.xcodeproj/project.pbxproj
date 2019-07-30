@@ -124,6 +124,7 @@
 		2CFED07F22EF9F3D00F8592E /* DetailsDisplayLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsDisplayLogicSpy.swift; sourceTree = "<group>"; };
 		2CFED08122EF9F6100F8592E /* DetailsPresentationLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPresentationLogicSpy.swift; sourceTree = "<group>"; };
 		2CFED08322EFA60D00F8592E /* DetailsWorkerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsWorkerSpy.swift; sourceTree = "<group>"; };
+		2CFED08522EFCF0500F8592E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		36249240FD659A9FD438996A /* Pods-itunesapi_csTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itunesapi_csTests.debug.xcconfig"; path = "Target Support Files/Pods-itunesapi_csTests/Pods-itunesapi_csTests.debug.xcconfig"; sourceTree = "<group>"; };
 		46F90A867DA3291FB22213DB /* Pods-itunesapi_csTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itunesapi_csTests.release.xcconfig"; path = "Target Support Files/Pods-itunesapi_csTests/Pods-itunesapi_csTests.release.xcconfig"; sourceTree = "<group>"; };
 		477FECDBB89B67DD359C9558 /* Pods_itunesapi_cs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_itunesapi_cs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -474,8 +475,8 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				es,
 			);
 			mainGroup = 2CFECFDE22ED2E5F00F8592E;
 			productRefGroup = 2CFECFE822ED2E5F00F8592E /* Products */;
@@ -648,6 +649,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2CFECFF722ED2E6100F8592E /* Base */,
+				2CFED08522EFCF0500F8592E /* es */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -659,6 +661,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -720,6 +723,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
