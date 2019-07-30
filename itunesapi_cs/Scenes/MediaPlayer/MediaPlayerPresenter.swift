@@ -14,6 +14,7 @@ import UIKit
 
 protocol MediaPlayerPresentationLogic {
     func presentPlaybackStatus(response: MediaPlayer.PlayResponse)
+    func dismissMediaPlayer()
 }
 
 class MediaPlayerPresenter: MediaPlayerPresentationLogic {
@@ -21,7 +22,15 @@ class MediaPlayerPresenter: MediaPlayerPresentationLogic {
 
     // MARK: Do something
     func presentPlaybackStatus(response: MediaPlayer.PlayResponse) {
-        let viewModel = MediaPlayer.PlayViewModel()
+        let viewModel = MediaPlayer.PlayViewModel(
+            trackName: response.media.trackName ?? "",
+            coverImageUrl: response.media.urlForArtwork
+        )
         viewController?.showPlaybackStatus(viewModel: viewModel)
+    }
+
+    func dismissMediaPlayer() {
+        let viewModel = MediaPlayer.CloseViewModel(animated: true)
+        viewController?.closeMediaPlayer(viewModel: viewModel)
     }
 }

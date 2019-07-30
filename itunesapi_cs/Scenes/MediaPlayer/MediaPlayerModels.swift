@@ -27,5 +27,8 @@ enum MediaPlayer {
         let media: Media
     }
 
-    struct PlayViewModel {}
+    struct PlayViewModel {
+        let trackName: String
+        var coverImageUrl: URL?
+    }
 }

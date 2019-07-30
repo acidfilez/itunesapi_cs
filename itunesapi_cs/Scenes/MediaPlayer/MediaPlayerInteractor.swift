@@ -10,28 +10,81 @@
 //  see http://clean-swift.com
 //
 
+import AVFoundation
 import UIKit
+import OrigamiEngine
 
 protocol MediaPlayerBusinessLogic {
     func loaded()
     func playMedia(request: MediaPlayer.PlayRequest)
+    func stopMedia()
 }
 
 protocol MediaPlayerDataStore {
     var media: Media? { get set }
 }
 
-class MediaPlayerInteractor: MediaPlayerBusinessLogic, MediaPlayerDataStore {
+class MediaPlayerInteractor: NSObject, MediaPlayerBusinessLogic, MediaPlayerDataStore {
     var presenter: MediaPlayerPresentationLogic?
     var worker: MediaPlayerWorker?
     var media: Media?
 
+    var player: ORGMEngine = ORGMEngine()
+
     func loaded() {
-        
+        playMedia(request: MediaPlayer.PlayRequest(media: media!))
     }
 
     func playMedia(request: MediaPlayer.PlayRequest) {
         let response = MediaPlayer.PlayResponse(media: request.media)
+
+        enableAudioSession()
+        player.delegate = self
+        player.play(media?.urlForPreview)
+
         presenter?.presentPlaybackStatus(response: response)
+    }
+
+    func stopMedia() {
+        player.stop()
+        player.delegate = nil
+        disableAudioSession()
+        presenter?.dismissMediaPlayer()
+    }
+}
+
+extension MediaPlayerInteractor {
+    func enableAudioSession() {
+        let session = AVAudioSession.sharedInstance()
+        try? session.setCategory(.playback)
+        try? session.setActive(true)
+    }
+
+    func disableAudioSession() {
+        let session = AVAudioSession.sharedInstance()
+        let queue = ORGMQueues.processing_queue()
+
+        queue?.async {
+            try? session.setActive(false)
+        }
+    }
+}
+
+extension MediaPlayerInteractor: ORGMEngineDelegate {
+    func engineExpectsNextUrl(_ engine: ORGMEngine!) -> URL! {
+        return nil // Solo un asset a reproducir
+    }
+
+    @objc func engine(_ engine: ORGMEngine!, didChange state: ORGMEngineState) {
+        switch state {
+        case ORGMEngineStatePaused: fallthrough
+
+        case ORGMEngineStateStopped:
+            stopMedia()
+            presenter?.dismissMediaPlayer()
+
+        default:
+            break
+        }
     }
 }

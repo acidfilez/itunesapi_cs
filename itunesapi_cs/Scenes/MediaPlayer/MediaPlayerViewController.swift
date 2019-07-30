@@ -21,6 +21,9 @@ class MediaPlayerViewController: UIViewController, MediaPlayerDisplayLogic {
     var interactor: MediaPlayerBusinessLogic?
     var router: (NSObjectProtocol & MediaPlayerRoutingLogic & MediaPlayerDataPassing)?
 
+    @IBOutlet weak var coverImageView: UIImageView!
+    @IBOutlet weak var trackNameLabel: UILabel!
+    
     // MARK: Object lifecycle
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -70,6 +73,7 @@ class MediaPlayerViewController: UIViewController, MediaPlayerDisplayLogic {
     // MARK: Actions
     
     @IBAction func closeButtonTapped(_ sender: UIButton) {
+        interactor?.stopMedia()
         closeMediaPlayer(viewModel: nil)
     }
     
@@ -89,6 +93,12 @@ class MediaPlayerViewController: UIViewController, MediaPlayerDisplayLogic {
     }
 
     func showPlaybackStatus(viewModel: MediaPlayer.PlayViewModel) {
-        
+        coverImageView.af_cancelImageRequest()
+
+        if let imageURL = viewModel.coverImageUrl {
+            coverImageView.af_setImage(withURL: imageURL)
+        }
+
+        trackNameLabel.text = viewModel.trackName
     }
 }
