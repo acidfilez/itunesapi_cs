@@ -62,10 +62,10 @@ class DetailsViewControllerTests: XCTestCase {
                 previewUrl: nil
             ),
             Media(
-                wrapperType: "wrapper type",
-                artistName: "artist",
+                wrapperType: "collection", // collection is used for grabbing album data
+                artistName: "The artist name",
                 collectionId: 1,
-                collectionName: "collection name",
+                collectionName: "The album name",
                 kind: "kind",
                 trackId: 1,
                 trackName: "track 1",
@@ -74,10 +74,14 @@ class DetailsViewControllerTests: XCTestCase {
                 previewUrl: nil
             )
         ]
-        let viewController =
+        let viewModel = Details.ViewModel(
+            artistName: album.albumInfo?.artistName ?? "",
+            albumName: album.albumInfo?.collectionName ?? ""
+        )
 
         // When
-        sut.album = album
+        loadView()
+        sut.displayDataForAlbum(viewModel: viewModel)
 
         // Then
         XCTAssertEqual(sut.artistLabel.text, album.albumInfo?.artistName)

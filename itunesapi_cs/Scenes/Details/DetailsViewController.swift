@@ -13,7 +13,7 @@
 import UIKit
 
 protocol DetailsDisplayLogic: class {
-//    func displaySomething(viewModel: Details.Something.ViewModel)
+    func displayDataForAlbum(viewModel: Details.ViewModel)
 }
 
 class DetailsViewController: UIViewController, DetailsDisplayLogic {
@@ -21,6 +21,9 @@ class DetailsViewController: UIViewController, DetailsDisplayLogic {
     var router: (NSObjectProtocol & DetailsRoutingLogic & DetailsDataPassing)?
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var coverImageView: UIImageView!
+    @IBOutlet weak var artistLabel: UILabel!
+    @IBOutlet weak var albumLabel: UILabel!
 
     var album: Album?
     var tracks: [Media]?
@@ -68,7 +71,7 @@ class DetailsViewController: UIViewController, DetailsDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        tableView.delegate = self
+        tableView.delegate = self
         tableView.dataSource = self
 
         if
@@ -78,6 +81,12 @@ class DetailsViewController: UIViewController, DetailsDisplayLogic {
             let request = Details.Request(media: media)
             interactor?.fetchAlbumDetails(request: request)
         }
+    }
+
+    // MARK: Use cases
+    func displayDataForAlbum(viewModel: Details.ViewModel) {
+        artistLabel.text = viewModel.artistName
+        albumLabel.text = viewModel.albumName
     }
 }
 
@@ -104,5 +113,21 @@ extension DetailsViewController: UITableViewDataSource {
         cell.trackNumber = item?.trackNumber
 
         return cell
+    }
+}
+
+extension DetailsViewController: UITableViewDelegate {
+
+    // MARK: Delegate
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+
+        guard let track = tracks?[indexPath.row] else {
+            return
+        }
+
+//        let request = Details.Request(media: track)
+//        interactor.didSelectMedia(request: request)
     }
 }

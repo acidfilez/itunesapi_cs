@@ -126,6 +126,9 @@
                         <viewLayoutGuide key="safeArea" id="67h-6W-jZv"/>
                     </view>
                     <connections>
+                        <outlet property="albumLabel" destination="MVq-ae-IQK" id="soO-x0-NVf"/>
+                        <outlet property="artistLabel" destination="Gom-wL-eHk" id="wuG-jA-Bjk"/>
+                        <outlet property="coverImageView" destination="Lfz-Pz-Zyn" id="Qhy-AL-noJ"/>
                         <outlet property="tableView" destination="yTO-d5-adM" id="hwi-0d-wHx"/>
                     </connections>
                 </viewController>

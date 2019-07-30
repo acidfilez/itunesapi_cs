@@ -24,6 +24,7 @@ enum Details {
     }
 
     struct ViewModel {
-        
+        let artistName: String
+        let albumName: String
     }
 }

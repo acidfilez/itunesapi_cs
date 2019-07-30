@@ -10,9 +10,11 @@
 import XCTest
 
 class DetailsDisplayLogicSpy: DetailsDisplayLogic {
-//    var displaySomethingCalled = false
-//
-//    func displaySomething(viewModel: Details.Something.ViewModel) {
-//        displaySomethingCalled = true
-//    }
+
+    var displayDataForAlbumCalled = false
+
+    func displayDataForAlbum(viewModel: Details.ViewModel) {
+        displayDataForAlbumCalled = true
+    }
+    
 }
