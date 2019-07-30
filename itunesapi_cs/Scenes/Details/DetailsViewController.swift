@@ -15,6 +15,7 @@ import UIKit
 
 protocol DetailsDisplayLogic: class {
     func displayDataForAlbum(viewModel: Details.ViewModel)
+    func routeToMediaPlayer(viewModel: Details.MediaPlayerViewModel)
 }
 
 class DetailsViewController: UIViewController, DetailsDisplayLogic {
@@ -99,6 +100,10 @@ class DetailsViewController: UIViewController, DetailsDisplayLogic {
 
         tracks = viewModel.tracks
         tableView.reloadData()
+    }
+
+    func routeToMediaPlayer(viewModel: Details.MediaPlayerViewModel) {
+        
     }
 }
 

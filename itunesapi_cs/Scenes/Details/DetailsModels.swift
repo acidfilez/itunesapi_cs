@@ -33,4 +33,8 @@ enum Details {
         var albumCoverImage: URL?
         let tracks: [Media]
     }
+
+    struct MediaPlayerViewModel {
+        let media: Media
+    }
 }

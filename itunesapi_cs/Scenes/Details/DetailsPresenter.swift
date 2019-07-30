@@ -39,10 +39,12 @@ class DetailsPresenter: DetailsPresentationLogic {
     }
 
     func presentAlbumDetailsErrorMessage() {
-        
+        // TODO: Later, shouldn't be any problems
+        // unless we have some internet connection issues
     }
 
     func presentMediaPlayer(response: Details.MediaPlayerResponse) {
-
+        let viewModel = Details.MediaPlayerViewModel(media: response.media)
+        viewController?.routeToMediaPlayer(viewModel: viewModel)
     }
 }

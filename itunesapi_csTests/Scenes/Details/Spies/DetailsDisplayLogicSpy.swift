@@ -16,5 +16,10 @@ class DetailsDisplayLogicSpy: DetailsDisplayLogic {
     func displayDataForAlbum(viewModel: Details.ViewModel) {
         displayDataForAlbumCalled = true
     }
-    
+
+    var routeToMediaPlayerCalled = false
+
+    func routeToMediaPlayer(viewModel: Details.MediaPlayerViewModel) {
+        routeToMediaPlayerCalled = true
+    }
 }
