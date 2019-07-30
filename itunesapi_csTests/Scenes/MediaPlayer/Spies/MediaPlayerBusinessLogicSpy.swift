@@ -9,4 +9,11 @@
 @testable import itunesapi_cs
 
 class MediaPlayerBusinessLogicSpy: MediaPlayerBusinessLogic {
+
+    var playMediaCalled = false
+
+    func playMedia(request: MediaPlayer.PlayRequest) {
+        playMediaCalled = true
+    }
+    
 }

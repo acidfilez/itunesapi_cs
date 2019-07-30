@@ -53,11 +53,12 @@ class MediaPlayerInteractorTests: XCTestCase {
         )
         let presenterSpy = MediaPlayerPresentationLogicSpy()
         sut.presenter = presenterSpy
+        let request = MediaPlayer.PlayRequest(media: media)
 
         // When
-        sut.playMedia(request: MediaPlayer.PlayMediaRequest)
+        sut.playMedia(request: request)
 
         // Then
-        XCTAssertTrue(presenterSpy.presentPlaybackStatus)
+        XCTAssertTrue(presenterSpy.presentPlaybackStatusCalled)
     }
 }

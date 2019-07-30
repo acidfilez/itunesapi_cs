@@ -18,4 +18,14 @@ enum MediaPlayer {
     struct CloseViewModel {
         let animated: Bool
     }
+
+    struct PlayRequest {
+        let media: Media
+    }
+    
+    struct PlayResponse {
+        let media: Media
+    }
+
+    struct PlayViewModel {}
 }

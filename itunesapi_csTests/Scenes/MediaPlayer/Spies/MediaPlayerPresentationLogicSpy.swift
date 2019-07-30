@@ -9,4 +9,10 @@
 @testable import itunesapi_cs
 
 class MediaPlayerPresentationLogicSpy: MediaPlayerPresentationLogic {
+
+    var presentPlaybackStatusCalled = false
+
+    func presentPlaybackStatus(response: MediaPlayer.PlayResponse) {
+        presentPlaybackStatusCalled = true
+    }
 }

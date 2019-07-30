@@ -13,10 +13,14 @@
 import UIKit
 
 protocol MediaPlayerPresentationLogic {
+    func presentPlaybackStatus(response: MediaPlayer.PlayResponse)
 }
 
 class MediaPlayerPresenter: MediaPlayerPresentationLogic {
     weak var viewController: MediaPlayerDisplayLogic?
 
     // MARK: Do something
+    func presentPlaybackStatus(response: MediaPlayer.PlayResponse) {
+        
+    }
 }
