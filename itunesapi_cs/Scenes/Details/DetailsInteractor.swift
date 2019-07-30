@@ -44,6 +44,7 @@ class DetailsInteractor: DetailsBusinessLogic, DetailsDataStore {
     }
 
     func didSelectMedia(request: Details.Request) {
+        media = request.media
         let response = Details.MediaPlayerResponse(media: request.media)
         presenter?.presentMediaPlayer(response: response)
     }

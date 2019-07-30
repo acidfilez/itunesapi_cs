@@ -62,5 +62,8 @@ class DetailsPresenterTests: XCTestCase {
         // Then
         XCTAssertTrue(viewControllerSpy.displayDataForAlbumCalled)
     }
-    
+
+    func testPresentMediaPlayer() {
+        
+    }
 }

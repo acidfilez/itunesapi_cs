@@ -115,6 +115,7 @@ class DetailsInteractorTests: XCTestCase {
         sut.didSelectMedia(request: request)
 
         // Then
+        XCTAssertNotNil(sut.media)
         XCTAssertTrue(presenterSpy.presentMediaPlayerCalled)
     }
 }
