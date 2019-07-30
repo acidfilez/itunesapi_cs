@@ -14,10 +14,105 @@
         <scene sceneID="9eQ-fr-x7Q">
             <objects>
                 <viewController storyboardIdentifier="MediaPlayerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="I4f-6o-v72" customClass="MediaPlayerViewController" customModule="itunesapi_cs" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="RMj-Dy-So2">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="RMj-Dy-So2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jWD-Pn-idv">
+                                <rect key="frame" x="8" y="328" width="398" height="240"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xov-vJ-ePQ">
+                                        <rect key="frame" x="354" y="8" width="36" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="36" id="6zA-Lt-ima"/>
+                                            <constraint firstAttribute="width" secondItem="xov-vJ-ePQ" secondAttribute="height" multiplier="1:1" id="hyi-mk-R0B"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="mediaplayer_close"/>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rer-Vw-OIn">
+                                        <rect key="frame" x="8" y="8" width="100" height="100"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="FlP-kU-edb"/>
+                                            <constraint firstAttribute="width" secondItem="Rer-Vw-OIn" secondAttribute="height" multiplier="1:1" id="ceQ-9z-jLX"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Título de la canción" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHr-7O-9uc">
+                                        <rect key="frame" x="116" y="48" width="230" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="15"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--:--" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRo-rr-EwD">
+                                        <rect key="frame" x="8" y="212" width="60" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="3hz-rJ-nXh"/>
+                                            <constraint firstAttribute="width" constant="60" id="zdk-Ub-de9"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="12"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--:--" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fL2-OY-OcU">
+                                        <rect key="frame" x="330" y="212" width="60" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="ZCB-Rm-Lm1"/>
+                                            <constraint firstAttribute="width" constant="60" id="i7M-xa-Cfc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="12"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="jHo-He-RCY">
+                                        <rect key="frame" x="6" y="183" width="386" height="30"/>
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="29" id="xc8-ma-pqm"/>
+                                        </constraints>
+                                        <color key="thumbTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </slider>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="xov-vJ-ePQ" secondAttribute="trailing" constant="8" id="1HM-J0-FhK"/>
+                                    <constraint firstAttribute="trailing" secondItem="jHo-He-RCY" secondAttribute="trailing" constant="8" id="5Hh-3f-KDO"/>
+                                    <constraint firstItem="WHr-7O-9uc" firstAttribute="top" relation="greaterThanOrEqual" secondItem="jWD-Pn-idv" secondAttribute="top" constant="8" id="5MS-uk-dtq"/>
+                                    <constraint firstItem="WHr-7O-9uc" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="xov-vJ-ePQ" secondAttribute="bottom" id="8fm-ya-vpy"/>
+                                    <constraint firstItem="Rer-Vw-OIn" firstAttribute="leading" secondItem="jWD-Pn-idv" secondAttribute="leading" constant="8" id="8wn-Dx-xmA"/>
+                                    <constraint firstItem="cRo-rr-EwD" firstAttribute="top" secondItem="jHo-He-RCY" secondAttribute="bottom" id="PnB-VS-eSb"/>
+                                    <constraint firstItem="jHo-He-RCY" firstAttribute="leading" secondItem="jWD-Pn-idv" secondAttribute="leading" constant="8" id="YqC-FB-YUY"/>
+                                    <constraint firstAttribute="bottom" secondItem="cRo-rr-EwD" secondAttribute="bottom" constant="8" id="c6q-1o-nNS"/>
+                                    <constraint firstAttribute="trailing" secondItem="fL2-OY-OcU" secondAttribute="trailing" constant="8" id="eDc-FQ-yt8"/>
+                                    <constraint firstItem="Rer-Vw-OIn" firstAttribute="top" secondItem="jWD-Pn-idv" secondAttribute="top" constant="8" id="hyU-G4-d11"/>
+                                    <constraint firstItem="WHr-7O-9uc" firstAttribute="leading" secondItem="Rer-Vw-OIn" secondAttribute="trailing" constant="8" id="lnN-Jj-Upj"/>
+                                    <constraint firstAttribute="bottom" secondItem="fL2-OY-OcU" secondAttribute="bottom" constant="8" id="p3Q-bl-8id"/>
+                                    <constraint firstItem="WHr-7O-9uc" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="Rer-Vw-OIn" secondAttribute="bottom" id="p9a-bz-L6D"/>
+                                    <constraint firstItem="WHr-7O-9uc" firstAttribute="centerY" secondItem="Rer-Vw-OIn" secondAttribute="centerY" id="pCD-sE-Rxn"/>
+                                    <constraint firstItem="cRo-rr-EwD" firstAttribute="leading" secondItem="jWD-Pn-idv" secondAttribute="leading" constant="8" id="qrK-al-HbP"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="240" id="uW2-8I-ZhQ"/>
+                                    <constraint firstItem="xov-vJ-ePQ" firstAttribute="top" secondItem="jWD-Pn-idv" secondAttribute="top" constant="8" id="whQ-p1-vSu"/>
+                                    <constraint firstAttribute="height" constant="240" id="xiY-xB-z64"/>
+                                    <constraint firstItem="xov-vJ-ePQ" firstAttribute="leading" secondItem="WHr-7O-9uc" secondAttribute="trailing" constant="8" id="yTk-VP-WCY"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jWD-Pn-idv" firstAttribute="leading" secondItem="b2L-Mc-9R7" secondAttribute="leading" constant="8" id="IgX-q5-Uu5"/>
+                            <constraint firstItem="b2L-Mc-9R7" firstAttribute="trailing" secondItem="jWD-Pn-idv" secondAttribute="trailing" constant="8" id="Wyi-iQ-OuN"/>
+                            <constraint firstItem="jWD-Pn-idv" firstAttribute="centerY" secondItem="RMj-Dy-So2" secondAttribute="centerY" id="Y2n-vU-R6U"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="b2L-Mc-9R7"/>
                     </view>
                 </viewController>
@@ -25,4 +120,7 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="mediaplayer_close" width="36" height="36"/>
+    </resources>
 </document>

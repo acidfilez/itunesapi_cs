@@ -13,7 +13,6 @@
 import UIKit
 
 protocol MediaPlayerBusinessLogic {
-    func doSomething(request: MediaPlayer.Something.Request)
 }
 
 protocol MediaPlayerDataStore {
@@ -24,14 +23,4 @@ class MediaPlayerInteractor: MediaPlayerBusinessLogic, MediaPlayerDataStore {
     var presenter: MediaPlayerPresentationLogic?
     var worker: MediaPlayerWorker?
     var media: Media?
-
-    // MARK: Do something
-
-    func doSomething(request: MediaPlayer.Something.Request) {
-        worker = MediaPlayerWorker()
-        worker?.doSomeWork()
-
-        let response = MediaPlayer.Something.Response()
-        presenter?.presentSomething(response: response)
-    }
 }

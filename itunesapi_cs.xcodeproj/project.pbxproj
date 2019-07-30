@@ -65,6 +65,13 @@
 		2CFED09922EFE42800F8592E /* MediaPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED09322EFE42800F8592E /* MediaPlayerViewController.swift */; };
 		2CFED09A22EFE42800F8592E /* MediaPlayerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED09422EFE42800F8592E /* MediaPlayerInteractor.swift */; };
 		2CFED09D22EFE4D300F8592E /* MediaPlayerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CFED09C22EFE4D300F8592E /* MediaPlayerViewController.storyboard */; };
+		2CFED0A322EFE91900F8592E /* MediaPlayerViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED09F22EFE91900F8592E /* MediaPlayerViewControllerTests.swift */; };
+		2CFED0A422EFE91900F8592E /* MediaPlayerInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED0A022EFE91900F8592E /* MediaPlayerInteractorTests.swift */; };
+		2CFED0A522EFE91900F8592E /* MediaPlayerWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED0A122EFE91900F8592E /* MediaPlayerWorkerTests.swift */; };
+		2CFED0A622EFE91900F8592E /* MediaPlayerPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED0A222EFE91900F8592E /* MediaPlayerPresenterTests.swift */; };
+		2CFED0A922EFE92E00F8592E /* MediaPlayerBusinessLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED0A822EFE92E00F8592E /* MediaPlayerBusinessLogicSpy.swift */; };
+		2CFED0AB22EFE93800F8592E /* MediaPlayerDisplayLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED0AA22EFE93800F8592E /* MediaPlayerDisplayLogicSpy.swift */; };
+		2CFED0AD22EFE94400F8592E /* MediaPlayerPresentationLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFED0AC22EFE94400F8592E /* MediaPlayerPresentationLogicSpy.swift */; };
 		7E230F1A2470A933C764020B /* Pods_itunesapi_cs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 477FECDBB89B67DD359C9558 /* Pods_itunesapi_cs.framework */; };
 		A4FBF1F421177EF708DD085D /* Pods_itunesapi_csTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 621182D182E1E907CA4AB043 /* Pods_itunesapi_csTests.framework */; };
 /* End PBXBuildFile section */
@@ -143,6 +150,13 @@
 		2CFED09322EFE42800F8592E /* MediaPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayerViewController.swift; sourceTree = "<group>"; };
 		2CFED09422EFE42800F8592E /* MediaPlayerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayerInteractor.swift; sourceTree = "<group>"; };
 		2CFED09C22EFE4D300F8592E /* MediaPlayerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MediaPlayerViewController.storyboard; sourceTree = "<group>"; };
+		2CFED09F22EFE91900F8592E /* MediaPlayerViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayerViewControllerTests.swift; sourceTree = "<group>"; };
+		2CFED0A022EFE91900F8592E /* MediaPlayerInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayerInteractorTests.swift; sourceTree = "<group>"; };
+		2CFED0A122EFE91900F8592E /* MediaPlayerWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayerWorkerTests.swift; sourceTree = "<group>"; };
+		2CFED0A222EFE91900F8592E /* MediaPlayerPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayerPresenterTests.swift; sourceTree = "<group>"; };
+		2CFED0A822EFE92E00F8592E /* MediaPlayerBusinessLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayerBusinessLogicSpy.swift; sourceTree = "<group>"; };
+		2CFED0AA22EFE93800F8592E /* MediaPlayerDisplayLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayerDisplayLogicSpy.swift; sourceTree = "<group>"; };
+		2CFED0AC22EFE94400F8592E /* MediaPlayerPresentationLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayerPresentationLogicSpy.swift; sourceTree = "<group>"; };
 		36249240FD659A9FD438996A /* Pods-itunesapi_csTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itunesapi_csTests.debug.xcconfig"; path = "Target Support Files/Pods-itunesapi_csTests/Pods-itunesapi_csTests.debug.xcconfig"; sourceTree = "<group>"; };
 		46F90A867DA3291FB22213DB /* Pods-itunesapi_csTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itunesapi_csTests.release.xcconfig"; path = "Target Support Files/Pods-itunesapi_csTests/Pods-itunesapi_csTests.release.xcconfig"; sourceTree = "<group>"; };
 		477FECDBB89B67DD359C9558 /* Pods_itunesapi_cs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_itunesapi_cs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -293,6 +307,7 @@
 		2CFED02F22ED35AE00F8592E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				2CFED09E22EFE90D00F8592E /* MediaPlayer */,
 				2CFED07322EF9EB000F8592E /* Details */,
 				2CFED03022ED35B200F8592E /* Search */,
 			);
@@ -447,6 +462,28 @@
 				2CFED09C22EFE4D300F8592E /* MediaPlayerViewController.storyboard */,
 			);
 			path = MediaPlayer;
+			sourceTree = "<group>";
+		};
+		2CFED09E22EFE90D00F8592E /* MediaPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				2CFED0A722EFE91E00F8592E /* Spies */,
+				2CFED09F22EFE91900F8592E /* MediaPlayerViewControllerTests.swift */,
+				2CFED0A022EFE91900F8592E /* MediaPlayerInteractorTests.swift */,
+				2CFED0A122EFE91900F8592E /* MediaPlayerWorkerTests.swift */,
+				2CFED0A222EFE91900F8592E /* MediaPlayerPresenterTests.swift */,
+			);
+			path = MediaPlayer;
+			sourceTree = "<group>";
+		};
+		2CFED0A722EFE91E00F8592E /* Spies */ = {
+			isa = PBXGroup;
+			children = (
+				2CFED0A822EFE92E00F8592E /* MediaPlayerBusinessLogicSpy.swift */,
+				2CFED0AA22EFE93800F8592E /* MediaPlayerDisplayLogicSpy.swift */,
+				2CFED0AC22EFE94400F8592E /* MediaPlayerPresentationLogicSpy.swift */,
+			);
+			path = Spies;
 			sourceTree = "<group>";
 		};
 		9D63D54D6E94E8CB44E6E600 /* Pods */ = {
@@ -681,12 +718,15 @@
 			files = (
 				2CFED03722ED35E700F8592E /* SearchViewControllerTests.swift in Sources */,
 				2CFED03A22ED35E700F8592E /* SearchPresenterTests.swift in Sources */,
+				2CFED0A622EFE91900F8592E /* MediaPlayerPresenterTests.swift in Sources */,
 				2CFED03922ED35E700F8592E /* SearchWorkerTests.swift in Sources */,
 				2CFED03D22ED362300F8592E /* SearchBusinessLogicSpy.swift in Sources */,
 				2CFED08022EF9F3D00F8592E /* DetailsDisplayLogicSpy.swift in Sources */,
 				2CFED07E22EF9EEA00F8592E /* DetailsBusinessLogicSpy.swift in Sources */,
 				2CFED08D22EFD49A00F8592E /* DetailsTableViewCellTests.swift in Sources */,
+				2CFED0A522EFE91900F8592E /* MediaPlayerWorkerTests.swift in Sources */,
 				2CFED07A22EF9EBD00F8592E /* DetailsWorkerTests.swift in Sources */,
+				2CFED0A922EFE92E00F8592E /* MediaPlayerBusinessLogicSpy.swift in Sources */,
 				2CFED05E22EF837600F8592E /* SearchTableViewCellTests.swift in Sources */,
 				2CFED07922EF9EBD00F8592E /* DetailsInteractorTests.swift in Sources */,
 				2CFED04122ED372000F8592E /* SearchDisplayLogicSpy.swift in Sources */,
@@ -695,9 +735,13 @@
 				2CFED07822EF9EBD00F8592E /* DetailsViewControllerTests.swift in Sources */,
 				2CFED00322ED2E6100F8592E /* itunesapi_csTests.swift in Sources */,
 				2CFED03F22ED36C100F8592E /* SearchPresentationLogicSpy.swift in Sources */,
+				2CFED0A322EFE91900F8592E /* MediaPlayerViewControllerTests.swift in Sources */,
+				2CFED0AB22EFE93800F8592E /* MediaPlayerDisplayLogicSpy.swift in Sources */,
 				2CFED08422EFA60D00F8592E /* DetailsWorkerSpy.swift in Sources */,
 				2CFED04722ED3BA800F8592E /* SearchWorkerSpy.swift in Sources */,
+				2CFED0AD22EFE94400F8592E /* MediaPlayerPresentationLogicSpy.swift in Sources */,
 				2CFED03822ED35E700F8592E /* SearchInteractorTests.swift in Sources */,
+				2CFED0A422EFE91900F8592E /* MediaPlayerInteractorTests.swift in Sources */,
 				2CFED04E22EF6DB100F8592E /* SearchCoreDataWorkerSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

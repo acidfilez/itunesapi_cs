@@ -13,16 +13,10 @@
 import UIKit
 
 protocol MediaPlayerPresentationLogic {
-    func presentSomething(response: MediaPlayer.Something.Response)
 }
 
 class MediaPlayerPresenter: MediaPlayerPresentationLogic {
     weak var viewController: MediaPlayerDisplayLogic?
 
     // MARK: Do something
-
-    func presentSomething(response: MediaPlayer.Something.Response) {
-        let viewModel = MediaPlayer.Something.ViewModel()
-        viewController?.displaySomething(viewModel: viewModel)
-    }
 }

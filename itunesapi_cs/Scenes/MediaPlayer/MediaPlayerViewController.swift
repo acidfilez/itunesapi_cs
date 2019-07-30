@@ -13,7 +13,6 @@
 import UIKit
 
 protocol MediaPlayerDisplayLogic: class {
-    func displaySomething(viewModel: MediaPlayer.Something.ViewModel)
 }
 
 class MediaPlayerViewController: UIViewController, MediaPlayerDisplayLogic {
@@ -62,19 +61,17 @@ class MediaPlayerViewController: UIViewController, MediaPlayerDisplayLogic {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        doSomething()
+        setupBlurEffect()
     }
 
-    // MARK: Do something
+    // MARK: Layout
+    func setupBlurEffect() {
+        // Background blur yeeey
+        let blurEffect = UIBlurEffect(style: .dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = view.bounds
 
-    //@IBOutlet weak var nameTextField: UITextField!
-
-    func doSomething() {
-        let request = MediaPlayer.Something.Request()
-        interactor?.doSomething(request: request)
-    }
-
-    func displaySomething(viewModel: MediaPlayer.Something.ViewModel) {
-        //nameTextField.text = viewModel.name
+        view.addSubview(blurEffectView)
+        view.sendSubviewToBack(blurEffectView)
     }
 }

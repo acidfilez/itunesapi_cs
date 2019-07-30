@@ -38,7 +38,7 @@ class DetailsRouter: NSObject, DetailsRoutingLogic, DetailsDataPassing {
 
     func navigateToDetails(source: DetailsViewController, destination: MediaPlayerViewController) {
         destination.modalTransitionStyle = .crossDissolve
-        destination.modalPresentationStyle = .fullScreen
+        destination.modalPresentationStyle = .overFullScreen
         source.navigationController?.present(destination, animated: true, completion: nil)
     }
 
